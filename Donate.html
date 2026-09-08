@@ -108,8 +108,8 @@
 </head>
 <body class="bg-background text-on-background font-body-md min-h-screen flex flex-col">
 <!-- TopNavBar -->
-<nav class="relative flex justify-between items-center px-margin-desktop py-base w-full sticky top-0 z-50 shadow-sm bg-surface dark:bg-on-background">
-<div class="font-headline-sm text-headline-sm font-bold text-primary dark:text-primary-fixed">
+<nav class="relative flex justify-between items-center px-margin-mobile md:px-margin-desktop py-base w-full sticky top-0 z-50 shadow-sm bg-surface dark:bg-on-background">
+<div class="absolute left-1/2 -translate-x-1/2 whitespace-nowrap font-headline-sm text-[20px] md:text-headline-sm font-bold text-primary dark:text-primary-fixed md:static md:translate-x-0">
             Creation Stewards
         </div>
 <div class="hidden md:flex gap-md items-center">
@@ -118,11 +118,11 @@
 <a class="text-on-surface-variant dark:text-surface-variant font-medium hover:text-secondary transition-colors duration-200" href="Program.html">Our Program</a>
 <a class="text-on-surface-variant dark:text-surface-variant font-medium hover:text-secondary transition-colors duration-200" href="Contact.html">Contact Us</a>
 </div>
-<div class="flex gap-sm items-center">
+<div class="hidden md:flex gap-sm items-center">
 <a href="Donate.html" class="font-label-md text-label-md px-sm py-xs border border-primary text-primary rounded hover:bg-surface-variant transition-colors inline-block">Sponsor</a>
 <a href="Donate.html" class="font-label-md text-label-md px-sm py-xs bg-primary text-on-primary rounded opacity-80 transition-all duration-200 inline-block">Donate</a>
 </div>
-<button type="button" class="md:hidden text-primary" data-menu-button aria-expanded="false" aria-controls="mobile-menu">
+<button type="button" class="md:hidden ml-auto mr-2 text-primary" data-menu-button aria-expanded="false" aria-controls="mobile-menu">
 <span class="material-symbols-outlined">menu</span>
 </button>
 <div id="mobile-menu" class="hidden absolute right-4 top-full mt-2 w-56 rounded-lg bg-surface p-4 shadow-lg ring-1 ring-primary/10 md:hidden">
