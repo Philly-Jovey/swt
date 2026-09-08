@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Contact Us - Creation Stewards</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&amp;family=Libre+Caslon+Text:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary": "#0c6780",
+                        "surface-variant": "#e2e3e0",
+                        "on-tertiary-container": "#d59d00",
+                        "on-primary-container": "#86af99",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed": "#baeaff",
+                        "on-secondary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "inverse-surface": "#2f312f",
+                        "tertiary-fixed": "#ffdea3",
+                        "surface-tint": "#3f6653",
+                        "on-primary-fixed-variant": "#274e3d",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-fixed-variant": "#004d62",
+                        "inverse-primary": "#a5d0b9",
+                        "on-surface": "#1a1c1b",
+                        "tertiary": "#342300",
+                        "error-container": "#ffdad6",
+                        "error": "#ba1a1a",
+                        "on-primary-fixed": "#002114",
+                        "surface-container": "#eeeeeb",
+                        "on-secondary-fixed": "#001f29",
+                        "surface-dim": "#dadad7",
+                        "inverse-on-surface": "#f1f1ee",
+                        "secondary-container": "#9ae1ff",
+                        "background": "#f9f9f6",
+                        "on-secondary-container": "#09657f",
+                        "surface-container-highest": "#e2e3e0",
+                        "surface-bright": "#f9f9f6",
+                        "outline-variant": "#c1c8c2",
+                        "on-surface-variant": "#414844",
+                        "on-tertiary-fixed-variant": "#5d4200",
+                        "on-error": "#ffffff",
+                        "primary-fixed-dim": "#a5d0b9",
+                        "surface": "#f9f9f6",
+                        "surface-container-low": "#f4f4f1",
+                        "on-error-container": "#93000a",
+                        "primary-fixed": "#c1ecd4",
+                        "surface-container-high": "#e8e8e5",
+                        "tertiary-container": "#4f3800",
+                        "primary-container": "#1b4332",
+                        "outline": "#717973",
+                        "on-background": "#1a1c1b",
+                        "tertiary-fixed-dim": "#fdbc13",
+                        "secondary-fixed-dim": "#89d0ed",
+                        "on-tertiary-fixed": "#261900",
+                        "primary": "#012d1d"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xl": "80px",
+                        "margin-mobile": "16px",
+                        "md": "24px",
+                        "base": "8px",
+                        "margin-desktop": "64px",
+                        "lg": "48px",
+                        "sm": "12px",
+                        "xs": "4px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Libre Caslon Text"],
+                        "title-lg": ["Hanken Grotesk"],
+                        "headline-lg": ["Libre Caslon Text"],
+                        "headline-md": ["Libre Caslon Text"],
+                        "display-lg": ["Libre Caslon Text"],
+                        "body-lg": ["Hanken Grotesk"],
+                        "headline-sm": ["Libre Caslon Text"],
+                        "label-md": ["Hanken Grotesk"],
+                        "body-md": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["32px", { "lineHeight": "40px", "fontWeight": "700" }],
+                        "title-lg": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "headline-lg": ["40px", { "lineHeight": "48px", "fontWeight": "700" }],
+                        "headline-md": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "display-lg": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-sm": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .icon-filled {
+            font-variation-settings: 'FILL' 1;
+        }
+        
+        .soft-shadow {
+            box-shadow: 0px 10px 30px rgba(27, 67, 50, 0.08);
+        }
+        
+        .input-focus-ring:focus {
+            outline: none;
+            border-color: #0c6780;
+            box-shadow: 0 0 0 1px #0c6780;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-lg antialiased">
+<!-- TopNavBar -->
+<nav class="bg-surface shadow-sm docked full-width top-0 flex justify-between items-center px-margin-mobile md:px-margin-desktop py-base w-full sticky top-0 z-50">
+<div class="font-headline-sm text-headline-sm font-bold text-primary">Creation Stewards</div>
+<div class="hidden md:flex gap-gutter items-center">
+<a class="text-on-surface-variant font-medium hover:text-secondary transition-colors duration-200" href="index.html">Home</a>
+<a class="text-on-surface-variant font-medium hover:text-secondary transition-colors duration-200" href="About.html">About Us</a>
+<a class="text-on-surface-variant font-medium hover:text-secondary transition-colors duration-200" href="Program.html">Our Program</a>
+<a class="text-primary font-bold border-b-2 border-primary pb-1 hover:text-secondary transition-colors duration-200" href="Contact.html">Contact Us</a>
+</div>
+<div class="hidden md:flex gap-sm">
+<a href="Donate.html" class="px-md py-sm rounded border border-primary text-primary font-label-md hover:bg-surface-container-low transition-colors inline-block">Sponsor</a>
+<a href="Donate.html" class="px-md py-sm rounded bg-primary text-on-primary font-label-md hover:opacity-90 transition-opacity inline-block">Donate</a>
+</div>
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</nav>
+<!-- Main Content Canvas -->
+<main class="max-w-[1200px] mx-auto px-margin-mobile md:px-margin-desktop py-lg space-y-xl">
+<!-- Header Section -->
+<header class="text-center max-w-2xl mx-auto space-y-md">
+<h1 class="font-display-lg text-display-lg text-primary">Get in Touch</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">We are dedicated to sustainable stewardship. Reach out to us for inquiries, partnerships, or to learn more about our programs in Uganda.</p>
+</header>
+<!-- Grid Layout for Form and Info -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-lg">
+<!-- Contact Form -->
+<section class="lg:col-span-7 bg-surface-container-lowest rounded-xl soft-shadow p-lg border border-primary-fixed-dim/20">
+<h2 class="font-headline-md text-headline-md text-primary mb-md">Reach Out to Us</h2>
+<form class="space-y-md">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<div class="flex flex-col gap-xs">
+<label class="font-label-md text-label-md text-on-surface" for="name">Full Name</label>
+<input class="rounded-lg border border-outline-variant bg-surface-bright px-sm py-sm text-body-md focus:border-secondary focus:ring-1 focus:ring-secondary transition-colors" id="name" placeholder="John Doe" type="text"/>
+</div>
+<div class="flex flex-col gap-xs">
+<label class="font-label-md text-label-md text-on-surface" for="email">Email Address</label>
+<input class="rounded-lg border border-outline-variant bg-surface-bright px-sm py-sm text-body-md focus:border-secondary focus:ring-1 focus:ring-secondary transition-colors" id="email" placeholder="john@example.com" type="email"/>
+</div>
+</div>
+<div class="flex flex-col gap-xs">
+<label class="font-label-md text-label-md text-on-surface" for="subject">Subject</label>
+<input class="rounded-lg border border-outline-variant bg-surface-bright px-sm py-sm text-body-md focus:border-secondary focus:ring-1 focus:ring-secondary transition-colors" id="subject" placeholder="How can we help?" type="text"/>
+</div>
+<div class="flex flex-col gap-xs">
+<label class="font-label-md text-label-md text-on-surface" for="message">Message</label>
+<textarea class="rounded-lg border border-outline-variant bg-surface-bright px-sm py-sm text-body-md focus:border-secondary focus:ring-1 focus:ring-secondary transition-colors resize-none" id="message" placeholder="Your message here..." rows="5"></textarea>
+</div>
+<button class="w-full bg-primary text-on-primary font-label-md text-label-md py-sm rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-xs" type="submit">
+<span>Send Message</span>
+<span class="material-symbols-outlined text-sm">send</span>
+</button>
+</form>
+</section>
+<!-- Office Details & Map -->
+<aside class="lg:col-span-5 space-y-lg flex flex-col">
+<!-- Office Details Card -->
+<div class="bg-secondary-fixed/20 rounded-xl p-md border-t-4 border-on-tertiary-container flex-1">
+<h3 class="font-title-lg text-title-lg text-primary mb-md">Office Details</h3>
+<ul class="space-y-md">
+<li class="flex items-start gap-sm">
+<span class="material-symbols-outlined text-secondary icon-filled mt-xs">location_on</span>
+<div>
+<p class="font-label-md text-label-md text-on-surface font-bold">Location</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Kampala, Uganda<br/>Plot 123, Conservation Avenue</p>
+</div>
+</li>
+<li class="flex items-start gap-sm">
+<span class="material-symbols-outlined text-secondary icon-filled mt-xs">mail</span>
+<div>
+<p class="font-label-md text-label-md text-on-surface font-bold">Email</p>
+<a class="font-body-md text-body-md text-secondary hover:underline" href="mailto:info@creationstewards.ug">info@creationstewards.ug</a>
+</div>
+</li>
+<li class="flex items-start gap-sm">
+<span class="material-symbols-outlined text-secondary icon-filled mt-xs">call</span>
+<div>
+<p class="font-label-md text-label-md text-on-surface font-bold">Phone</p>
+<p class="font-body-md text-body-md text-on-surface-variant">+256 700 123 456</p>
+</div>
+</li>
+</ul>
+</div>
+<!-- Map Placeholder -->
+<div class="rounded-xl overflow-hidden h-[250px] border border-outline-variant bg-surface-container relative">
+<img class="w-full h-full object-cover" data-alt="A stylized, modern map of Kampala, Uganda, showing the general area. The map uses a minimalist color palette featuring soft greens, sky blues, and warm yellow accents to match the brand's sustainable, nature-inspired aesthetic. The roads are subtle grey lines, and a prominent dark green marker indicates the office location. The lighting is flat and graphic." data-location="Kampala, Uganda" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAl-bsoJ8PoAdfDX3gwXUOlxGdedtSj0F46JAEBekyhemNaiSZsT7uUYhXX5PYG4loU-LY6GtK-aq-GaxlZ2VTc6nQqVRxoJC3lLPnn251r17iV3dQU0s8UqFSOUOcXP3mqyHfi8QbnQQMTlhT8uEf2jVmp2jk5mZmJJwtZ_TFJJhn882RzrMBSXWKNsBbQlnYx0_83BmWwmCQBDeXhz1SUE5czzz2h0Ke0Tckd0DwxtRPwvFBnhSPezw"/>
+</div>
+</aside>
+</div>
+<!-- Become a Partner Section -->
+<section class="bg-primary text-on-primary rounded-xl p-lg relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-md">
+<!-- Decorative Abstract Leaves/Shapes could go here as background -->
+<div class="absolute -right-20 -bottom-20 opacity-10 pointer-events-none">
+<span class="material-symbols-outlined" style="font-size: 300px;">eco</span>
+</div>
+<div class="max-w-xl z-10 space-y-sm">
+<h2 class="font-headline-md text-headline-md text-on-primary">Become a Partner</h2>
+<p class="font-body-md text-body-md text-on-primary/80">Join our network of ministry partners dedicated to environmental stewardship and community empowerment. Together, we can cultivate sustainable futures.</p>
+</div>
+<div class="z-10 flex-shrink-0">
+<button class="bg-tertiary-fixed text-on-tertiary-fixed font-label-md text-label-md px-lg py-sm rounded-lg hover:bg-tertiary-fixed-dim transition-colors flex items-center gap-xs">
+<span>Partner With Us</span>
+<span class="material-symbols-outlined">handshake</span>
+</button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-lg px-margin-mobile md:px-margin-desktop grid grid-cols-1 md:grid-cols-3 gap-gutter bg-primary text-on-primary mt-xl">
+<div class="space-y-sm">
+<div class="font-headline-md text-headline-md text-on-primary">Creation Stewards</div>
+<p class="font-body-md text-body-md text-on-primary/80">© 2024 Creation Stewards-Uganda. All rights reserved. Professional Stewardship for a sustainable future.</p>
+</div>
+<div class="md:col-span-2 flex flex-col md:flex-row justify-end gap-lg md:gap-xl">
+<div class="flex flex-col gap-sm">
+<a class="font-body-md text-body-md text-on-primary/80 hover:text-secondary-fixed transition-colors" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-on-primary/80 hover:text-secondary-fixed transition-colors" href="#">Terms of Service</a>
+<a class="font-body-md text-body-md text-on-primary/80 hover:text-secondary-fixed transition-colors" href="#">Volunteer Portal</a>
+</div>
+</div>
+</footer>
+</body></html>

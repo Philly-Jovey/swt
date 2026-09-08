@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Dashboard - Creation Stewards Admin</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&amp;family=Libre+Caslon+Text:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary": "#0c6780",
+                    "surface-variant": "#e2e3e0",
+                    "on-tertiary-container": "#d59d00",
+                    "on-primary-container": "#86af99",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary-fixed": "#baeaff",
+                    "on-secondary": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "inverse-surface": "#2f312f",
+                    "tertiary-fixed": "#ffdea3",
+                    "surface-tint": "#3f6653",
+                    "on-primary-fixed-variant": "#274e3d",
+                    "on-tertiary": "#ffffff",
+                    "on-secondary-fixed-variant": "#004d62",
+                    "inverse-primary": "#a5d0b9",
+                    "on-surface": "#1a1c1b",
+                    "tertiary": "#342300",
+                    "error-container": "#ffdad6",
+                    "error": "#ba1a1a",
+                    "on-primary-fixed": "#002114",
+                    "surface-container": "#eeeeeb",
+                    "on-secondary-fixed": "#001f29",
+                    "surface-dim": "#dadad7",
+                    "inverse-on-surface": "#f1f1ee",
+                    "secondary-container": "#9ae1ff",
+                    "background": "#f9f9f6",
+                    "on-secondary-container": "#09657f",
+                    "surface-container-highest": "#e2e3e0",
+                    "surface-bright": "#f9f9f6",
+                    "outline-variant": "#c1c8c2",
+                    "on-surface-variant": "#414844",
+                    "on-tertiary-fixed-variant": "#5d4200",
+                    "on-error": "#ffffff",
+                    "primary-fixed-dim": "#a5d0b9",
+                    "surface": "#f9f9f6",
+                    "surface-container-low": "#f4f4f1",
+                    "on-error-container": "#93000a",
+                    "primary-fixed": "#c1ecd4",
+                    "surface-container-high": "#e8e8e5",
+                    "tertiary-container": "#4f3800",
+                    "primary-container": "#1b4332",
+                    "outline": "#717973",
+                    "on-background": "#1a1c1b",
+                    "tertiary-fixed-dim": "#fdbc13",
+                    "secondary-fixed-dim": "#89d0ed",
+                    "on-tertiary-fixed": "#261900",
+                    "primary": "#012d1d"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xl": "80px",
+                    "margin-mobile": "16px",
+                    "md": "24px",
+                    "base": "8px",
+                    "margin-desktop": "64px",
+                    "lg": "48px",
+                    "sm": "12px",
+                    "xs": "4px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "headline-lg-mobile": [
+                            "Libre Caslon Text"
+                    ],
+                    "title-lg": [
+                            "Hanken Grotesk"
+                    ],
+                    "headline-lg": [
+                            "Libre Caslon Text"
+                    ],
+                    "headline-md": [
+                            "Libre Caslon Text"
+                    ],
+                    "display-lg": [
+                            "Libre Caslon Text"
+                    ],
+                    "body-lg": [
+                            "Hanken Grotesk"
+                    ],
+                    "headline-sm": [
+                            "Libre Caslon Text"
+                    ],
+                    "label-md": [
+                            "Hanken Grotesk"
+                    ],
+                    "body-md": [
+                            "Hanken Grotesk"
+                    ]
+            },
+            "fontSize": {
+                    "headline-lg-mobile": [
+                            "32px",
+                            {
+                                    "lineHeight": "40px",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "title-lg": [
+                            "20px",
+                            {
+                                    "lineHeight": "28px",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "headline-lg": [
+                            "40px",
+                            {
+                                    "lineHeight": "48px",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "headline-md": [
+                            "32px",
+                            {
+                                    "lineHeight": "40px",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "display-lg": [
+                            "56px",
+                            {
+                                    "lineHeight": "64px",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "body-lg": [
+                            "18px",
+                            {
+                                    "lineHeight": "28px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "headline-sm": [
+                            "24px",
+                            {
+                                    "lineHeight": "32px",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "label-md": [
+                            "14px",
+                            {
+                                    "lineHeight": "20px",
+                                    "letterSpacing": "0.05em",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "body-md": [
+                            "16px",
+                            {
+                                    "lineHeight": "24px",
+                                    "fontWeight": "400"
+                            }
+                    ]
+            }
+        },
+        },
+      }
+    </script>
+<style>
+        /* Custom scrollbar for webkit */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f9f9f6; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #e2e3e0; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #c1c8c2; 
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md antialiased h-screen overflow-hidden flex">
+<!-- SideNavBar -->
+<nav class="hidden md:flex fixed left-0 top-0 h-screen w-64 flex-col p-md bg-surface-container-low dark:bg-on-background border-r border-outline-variant z-40">
+<!-- Header -->
+<div class="flex items-center gap-sm mb-lg">
+<img alt="Admin User" class="w-12 h-12 rounded-full object-cover border-2 border-secondary" data-alt="A small, professional portrait photograph of an African administrator in a bright, modern office setting. The image should be warm, approachable, and well-lit with natural sunlight, fitting a professional stewardship aesthetic with subtle green and gold tones in the background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9Css92rnMqyU5dDqbN_u1uFSk9jFMNEIAhsL1gA7j-jU8YC-hUpQJXWVh2Wmi7caY7KONg2MnD32Tsp7SD5DIvDterYVGLb_ZEl-5fO--bUpr-p9nECnriCCRdz-45r0b0WDTE6b4NS_avJ0Egux_j_PTsFK7dTx3emsX_tH8RTmQ1RafSe-czhvYTtmhOebY4h6-DncSMsMT-Yz12fO_v59KTt3m-U80kJZKbW1c3sfZBmMTJrCWYQ"/>
+<div>
+<h1 class="font-headline-sm text-headline-sm text-primary dark:text-primary-fixed m-0 leading-tight">Admin Panel</h1>
+<p class="font-label-md text-label-md text-on-surface-variant m-0">Creation Stewards</p>
+</div>
+</div>
+<!-- Navigation Links -->
+<ul class="flex flex-col gap-sm flex-1 m-0 p-0 list-none font-label-md text-label-md">
+<li>
+<a class="flex items-center gap-sm text-primary font-bold bg-secondary-container dark:bg-secondary text-on-secondary-container rounded-lg px-4 py-3 w-full scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+                    Dashboard
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-sm text-on-surface-variant dark:text-surface-variant p-2 rounded-lg px-4 py-3 w-full hover:bg-surface-container-high dark:hover:bg-surface-variant transition-colors" href="#">
+<span class="material-symbols-outlined">edit_note</span>
+                    Content Management
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-sm text-on-surface-variant dark:text-surface-variant p-2 rounded-lg px-4 py-3 w-full hover:bg-surface-container-high dark:hover:bg-surface-variant transition-colors" href="#">
+<span class="material-symbols-outlined">group</span>
+                    User Management
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-sm text-on-surface-variant dark:text-surface-variant p-2 rounded-lg px-4 py-3 w-full hover:bg-surface-container-high dark:hover:bg-surface-variant transition-colors" href="#">
+<span class="material-symbols-outlined">assessment</span>
+                    Reports
+                </a>
+</li>
+</ul>
+<!-- Bottom Actions -->
+<div class="mt-auto">
+<button class="w-full py-2 px-4 rounded-lg bg-surface-container border border-outline-variant text-on-surface font-label-md hover:bg-surface-variant transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">logout</span>
+                Logout
+            </button>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-1 md:ml-64 h-full overflow-y-auto bg-background">
+<!-- Mobile Header (Visible only on small screens) -->
+<header class="md:hidden flex items-center justify-between p-margin-mobile bg-surface-container-low border-b border-outline-variant sticky top-0 z-30">
+<div class="flex items-center gap-sm">
+<img alt="Admin User" class="w-8 h-8 rounded-full object-cover border border-secondary" data-alt="A small, professional portrait photograph of an African administrator in a bright, modern office setting. The image should be warm, approachable, and well-lit with natural sunlight, fitting a professional stewardship aesthetic with subtle green and gold tones in the background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZGydF4XY-AgCzB7uYdLJvA2XjreCCIUUyFUqT1eI46IZVjL4XiNRXhXX62DaUzJlDFnVNonOx1IPNu6czEjGLdko2O2csVNCby0hDy01SzBCs2t-yDwOSNhKbqiYF-vdD34WopfHieVxJpyLEnKgaE3iQyN3VzAmTfaxGOgtCZ3XHW5J2COu3kgwKuW6Iyf6l2jX4IYwVCBnAZPCR11D0YQB9rfwfdN6EeiUuqn-sn44_QBWr8NGopg"/>
+<h1 class="font-headline-sm text-headline-sm text-primary m-0">Dashboard</h1>
+</div>
+<button class="text-on-surface-variant p-2">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</header>
+<div class="p-margin-mobile md:p-margin-desktop md:pt-lg max-w-[1200px] mx-auto">
+<!-- Page Title -->
+<div class="mb-lg">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-xs">Dashboard Overview</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Welcome back. Here is the latest snapshot of our stewardship efforts.</p>
+</div>
+<!-- Metrics Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter mb-xl">
+<!-- Metric 1: Trees Planted -->
+<div class="bg-surface-container-lowest rounded-xl p-md border border-primary/10 shadow-[0px_10px_30px_rgba(27,67,50,0.04)] hover:shadow-[0px_15px_40px_rgba(27,67,50,0.08)] transition-shadow duration-300 relative overflow-hidden group">
+<div class="absolute top-0 left-0 w-full h-1 bg-primary"></div>
+<div class="flex justify-between items-start mb-4">
+<div class="p-3 bg-primary-container/10 rounded-lg text-primary-container">
+<span class="material-symbols-outlined text-[28px]">forest</span>
+</div>
+<span class="font-label-md text-label-md text-secondary-container bg-secondary-container/20 px-2 py-1 rounded text-[12px]">+12%</span>
+</div>
+<p class="font-label-md text-label-md text-on-surface-variant mb-1">Trees Planted</p>
+<h3 class="font-headline-md text-headline-md text-primary">12,450</h3>
+<!-- Decorative abstract shape -->
+<div class="absolute -bottom-4 -right-4 w-24 h-24 bg-primary-container/5 rounded-full blur-xl group-hover:scale-150 transition-transform duration-700"></div>
+</div>
+<!-- Metric 2: Total Donations -->
+<div class="bg-surface-container-lowest rounded-xl p-md border border-primary/10 shadow-[0px_10px_30px_rgba(27,67,50,0.04)] hover:shadow-[0px_15px_40px_rgba(27,67,50,0.08)] transition-shadow duration-300 relative overflow-hidden group">
+<div class="absolute top-0 left-0 w-full h-1 bg-on-tertiary-container"></div>
+<div class="flex justify-between items-start mb-4">
+<div class="p-3 bg-tertiary-container/10 rounded-lg text-on-tertiary-container">
+<span class="material-symbols-outlined text-[28px]">volunteer_activism</span>
+</div>
+<span class="font-label-md text-label-md text-secondary-container bg-secondary-container/20 px-2 py-1 rounded text-[12px]">+5%</span>
+</div>
+<p class="font-label-md text-label-md text-on-surface-variant mb-1">Total Donations</p>
+<h3 class="font-headline-md text-headline-md text-primary">$45,200</h3>
+<!-- Decorative abstract shape -->
+<div class="absolute -bottom-4 -right-4 w-24 h-24 bg-tertiary-container/5 rounded-full blur-xl group-hover:scale-150 transition-transform duration-700"></div>
+</div>
+<!-- Metric 3: Seminars Held -->
+<div class="bg-surface-container-lowest rounded-xl p-md border border-primary/10 shadow-[0px_10px_30px_rgba(27,67,50,0.04)] hover:shadow-[0px_15px_40px_rgba(27,67,50,0.08)] transition-shadow duration-300 relative overflow-hidden group">
+<div class="absolute top-0 left-0 w-full h-1 bg-secondary"></div>
+<div class="flex justify-between items-start mb-4">
+<div class="p-3 bg-secondary-container/20 rounded-lg text-secondary">
+<span class="material-symbols-outlined text-[28px]">school</span>
+</div>
+</div>
+<p class="font-label-md text-label-md text-on-surface-variant mb-1">Seminars Held</p>
+<h3 class="font-headline-md text-headline-md text-primary">24</h3>
+<!-- Decorative abstract shape -->
+<div class="absolute -bottom-4 -right-4 w-24 h-24 bg-secondary-container/10 rounded-full blur-xl group-hover:scale-150 transition-transform duration-700"></div>
+</div>
+<!-- Metric 4: Active Volunteers -->
+<div class="bg-surface-container-lowest rounded-xl p-md border border-primary/10 shadow-[0px_10px_30px_rgba(27,67,50,0.04)] hover:shadow-[0px_15px_40px_rgba(27,67,50,0.08)] transition-shadow duration-300 relative overflow-hidden group">
+<div class="absolute top-0 left-0 w-full h-1 bg-surface-tint"></div>
+<div class="flex justify-between items-start mb-4">
+<div class="p-3 bg-surface-variant rounded-lg text-surface-tint">
+<span class="material-symbols-outlined text-[28px]">groups</span>
+</div>
+<span class="font-label-md text-label-md text-on-tertiary-container bg-tertiary-fixed/50 px-2 py-1 rounded text-[12px]">+24</span>
+</div>
+<p class="font-label-md text-label-md text-on-surface-variant mb-1">Active Volunteers</p>
+<h3 class="font-headline-md text-headline-md text-primary">156</h3>
+<!-- Decorative abstract shape -->
+<div class="absolute -bottom-4 -right-4 w-24 h-24 bg-surface-variant/30 rounded-full blur-xl group-hover:scale-150 transition-transform duration-700"></div>
+</div>
+</div>
+<!-- Complex Layout: Main Table + Sidebar -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-gutter mb-xl">
+<!-- Main Area: Recent Donor Activity -->
+<div class="lg:col-span-2 bg-surface-container-lowest rounded-xl border border-primary/10 shadow-[0px_10px_30px_rgba(27,67,50,0.04)] overflow-hidden">
+<div class="p-md border-b border-outline-variant/30 flex justify-between items-center bg-surface-bright">
+<h3 class="font-title-lg text-title-lg text-primary m-0">Recent Donor Activity</h3>
+<button class="font-label-md text-label-md text-secondary hover:text-secondary-fixed-dim transition-colors flex items-center gap-1">
+                            View All <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low font-label-md text-label-md text-on-surface-variant border-b border-outline-variant/50">
+<th class="p-md font-medium">Donor</th>
+<th class="p-md font-medium">Campaign</th>
+<th class="p-md font-medium">Amount</th>
+<th class="p-md font-medium">Status</th>
+</tr>
+</thead>
+<tbody class="font-body-md text-body-md text-on-surface">
+<!-- Row 1 -->
+<tr class="border-b border-outline-variant/30 hover:bg-surface-container-lowest/50 transition-colors">
+<td class="p-md flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary-fixed text-on-primary-fixed flex items-center justify-center font-bold text-[14px]">JD</div>
+<div>
+<p class="font-semibold text-primary m-0">John Doe</p>
+<p class="text-[12px] text-on-surface-variant m-0">2 mins ago</p>
+</div>
+</td>
+<td class="p-md">Reforestation 2024</td>
+<td class="p-md font-medium text-primary">$500.00</td>
+<td class="p-md">
+<span class="inline-flex items-center gap-1 px-2 py-1 rounded-full bg-secondary-fixed/30 text-on-secondary-fixed-variant text-[12px] font-medium border border-secondary/20">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Completed
+                                        </span>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="border-b border-outline-variant/30 hover:bg-surface-container-lowest/50 transition-colors">
+<td class="p-md flex items-center gap-3">
+<img alt="Sarah Jenkins" class="w-10 h-10 rounded-full object-cover" data-alt="A tiny, perfectly square profile picture of a woman smiling outdoors in a natural setting. Warm, natural lighting, high quality, professional yet approachable." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBD9HLHsN2vW_-bhOKjxO1bhcrRcYOzl-tMUfQfsYnhS0Q14VSd3BxumTE60PVskqzkbLdKq49vSmLDWKDrANtrG_Ocpf5a_Oo0PC40V4QUzUJ1zjEFLwo2SDrkglTJWOU154seCgCTBwPoNQmIQsip-SwanFFh_QBk2Guor3PjF2idKDlG52P8sTKUKeCFe7EWHNdW4MIx1kzmDx8IkrODItOk-FJDgU3EKRxvwKfVs8tUmj58eESaIA"/>
+<div>
+<p class="font-semibold text-primary m-0">Sarah Jenkins</p>
+<p class="text-[12px] text-on-surface-variant m-0">1 hour ago</p>
+</div>
+</td>
+<td class="p-md">Community Wells</td>
+<td class="p-md font-medium text-primary">$1,200.00</td>
+<td class="p-md">
+<span class="inline-flex items-center gap-1 px-2 py-1 rounded-full bg-secondary-fixed/30 text-on-secondary-fixed-variant text-[12px] font-medium border border-secondary/20">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Completed
+                                        </span>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="border-b border-outline-variant/30 hover:bg-surface-container-lowest/50 transition-colors">
+<td class="p-md flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-tertiary-fixed text-on-tertiary-fixed flex items-center justify-center font-bold text-[14px]">MG</div>
+<div>
+<p class="font-semibold text-primary m-0">Mbarara Group</p>
+<p class="text-[12px] text-on-surface-variant m-0">3 hours ago</p>
+</div>
+</td>
+<td class="p-md">Youth Seminar Series</td>
+<td class="p-md font-medium text-primary">$350.00</td>
+<td class="p-md">
+<span class="inline-flex items-center gap-1 px-2 py-1 rounded-full bg-tertiary-fixed/30 text-on-tertiary-fixed-variant text-[12px] font-medium border border-tertiary-fixed-dim/50">
+<span class="w-1.5 h-1.5 rounded-full bg-on-tertiary-container"></span> Processing
+                                        </span>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-container-lowest/50 transition-colors">
+<td class="p-md flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-variant text-on-surface-variant flex items-center justify-center font-bold text-[14px]">AK</div>
+<div>
+<p class="font-semibold text-primary m-0">Alice Kintu</p>
+<p class="text-[12px] text-on-surface-variant m-0">Yesterday</p>
+</div>
+</td>
+<td class="p-md">General Fund</td>
+<td class="p-md font-medium text-primary">$50.00</td>
+<td class="p-md">
+<span class="inline-flex items-center gap-1 px-2 py-1 rounded-full bg-secondary-fixed/30 text-on-secondary-fixed-variant text-[12px] font-medium border border-secondary/20">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Completed
+                                        </span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Sidebar Area: Program Updates -->
+<div class="bg-surface-container-lowest rounded-xl border border-primary/10 shadow-[0px_10px_30px_rgba(27,67,50,0.04)] flex flex-col overflow-hidden">
+<div class="p-md border-b border-outline-variant/30 bg-surface-bright relative">
+<!-- Top golden border accent -->
+<div class="absolute top-0 left-0 w-full h-1 bg-on-tertiary-container"></div>
+<h3 class="font-title-lg text-title-lg text-primary m-0 flex items-center gap-2">
+<span class="material-symbols-outlined text-on-tertiary-container">campaign</span>
+                            Program Updates
+                        </h3>
+</div>
+<div class="p-md flex-1 overflow-y-auto flex flex-col gap-md">
+<!-- Update Item 1 -->
+<div class="relative pl-6 before:content-[''] before:absolute before:left-1.5 before:top-2 before:bottom-[-24px] before:w-px before:bg-outline-variant/50 last:before:hidden">
+<div class="absolute left-0 top-1.5 w-3 h-3 rounded-full bg-on-tertiary-container ring-4 ring-surface-container-lowest"></div>
+<span class="inline-block px-2 py-0.5 rounded bg-secondary-fixed/20 text-on-secondary-container text-[11px] font-bold tracking-wider uppercase mb-1">Reforestation</span>
+<h4 class="font-label-md text-label-md text-primary font-bold m-0 mb-1">Q3 Planting Goal Reached</h4>
+<p class="font-body-md text-body-md text-on-surface-variant text-[14px] leading-snug m-0">We successfully planted 5,000 mahogany saplings in the northern sector this week.</p>
+<span class="block mt-2 text-[12px] text-outline">Oct 12, 2024</span>
+</div>
+<!-- Update Item 2 -->
+<div class="relative pl-6 before:content-[''] before:absolute before:left-1.5 before:top-2 before:bottom-[-24px] before:w-px before:bg-outline-variant/50 last:before:hidden">
+<div class="absolute left-0 top-1.5 w-3 h-3 rounded-full bg-primary ring-4 ring-surface-container-lowest"></div>
+<span class="inline-block px-2 py-0.5 rounded bg-primary-fixed/30 text-on-primary-fixed-variant text-[11px] font-bold tracking-wider uppercase mb-1">Community</span>
+<h4 class="font-label-md text-label-md text-primary font-bold m-0 mb-1">New Seminar Scheduled</h4>
+<p class="font-body-md text-body-md text-on-surface-variant text-[14px] leading-snug m-0">"Sustainable Agriculture Basics" seminar confirmed for next Tuesday in Kampala.</p>
+<span class="block mt-2 text-[12px] text-outline">Oct 10, 2024</span>
+</div>
+<!-- Update Item 3 -->
+<div class="relative pl-6 before:content-[''] before:absolute before:left-1.5 before:top-2 before:bottom-[-24px] before:w-px before:bg-outline-variant/50 last:before:hidden">
+<div class="absolute left-0 top-1.5 w-3 h-3 rounded-full bg-secondary ring-4 ring-surface-container-lowest"></div>
+<span class="inline-block px-2 py-0.5 rounded bg-outline-variant/30 text-on-surface-variant text-[11px] font-bold tracking-wider uppercase mb-1">Admin</span>
+<h4 class="font-label-md text-label-md text-primary font-bold m-0 mb-1">System Maintenance</h4>
+<p class="font-body-md text-body-md text-on-surface-variant text-[14px] leading-snug m-0">Scheduled downtime for the volunteer portal on Sunday at 2 AM EAT.</p>
+<span class="block mt-2 text-[12px] text-outline">Oct 08, 2024</span>
+</div>
+</div>
+<div class="p-md pt-0 mt-auto">
+<button class="w-full py-2.5 px-4 rounded-lg bg-surface-container-low border border-outline-variant text-on-surface font-label-md hover:bg-surface-variant transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">add</span>
+                            New Update
+                        </button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

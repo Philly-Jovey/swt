@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Donate - Creation Stewards Uganda</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&amp;family=Libre+Caslon+Text:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary": "#0c6780",
+                        "surface-variant": "#e2e3e0",
+                        "on-tertiary-container": "#d59d00",
+                        "on-primary-container": "#86af99",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed": "#baeaff",
+                        "on-secondary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "inverse-surface": "#2f312f",
+                        "tertiary-fixed": "#ffdea3",
+                        "surface-tint": "#3f6653",
+                        "on-primary-fixed-variant": "#274e3d",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-fixed-variant": "#004d62",
+                        "inverse-primary": "#a5d0b9",
+                        "on-surface": "#1a1c1b",
+                        "tertiary": "#342300",
+                        "error-container": "#ffdad6",
+                        "error": "#ba1a1a",
+                        "on-primary-fixed": "#002114",
+                        "surface-container": "#eeeeeb",
+                        "on-secondary-fixed": "#001f29",
+                        "surface-dim": "#dadad7",
+                        "inverse-on-surface": "#f1f1ee",
+                        "secondary-container": "#9ae1ff",
+                        "background": "#f9f9f6",
+                        "on-secondary-container": "#09657f",
+                        "surface-container-highest": "#e2e3e0",
+                        "surface-bright": "#f9f9f6",
+                        "outline-variant": "#c1c8c2",
+                        "on-surface-variant": "#414844",
+                        "on-tertiary-fixed-variant": "#5d4200",
+                        "on-error": "#ffffff",
+                        "primary-fixed-dim": "#a5d0b9",
+                        "surface": "#f9f9f6",
+                        "surface-container-low": "#f4f4f1",
+                        "on-error-container": "#93000a",
+                        "primary-fixed": "#c1ecd4",
+                        "surface-container-high": "#e8e8e5",
+                        "tertiary-container": "#4f3800",
+                        "primary-container": "#1b4332",
+                        "outline": "#717973",
+                        "on-background": "#1a1c1b",
+                        "tertiary-fixed-dim": "#fdbc13",
+                        "secondary-fixed-dim": "#89d0ed",
+                        "on-tertiary-fixed": "#261900",
+                        "primary": "#012d1d"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xl": "80px",
+                        "margin-mobile": "16px",
+                        "md": "24px",
+                        "base": "8px",
+                        "margin-desktop": "64px",
+                        "lg": "48px",
+                        "sm": "12px",
+                        "xs": "4px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Libre Caslon Text"],
+                        "title-lg": ["Hanken Grotesk"],
+                        "headline-lg": ["Libre Caslon Text"],
+                        "headline-md": ["Libre Caslon Text"],
+                        "display-lg": ["Libre Caslon Text"],
+                        "body-lg": ["Hanken Grotesk"],
+                        "headline-sm": ["Libre Caslon Text"],
+                        "label-md": ["Hanken Grotesk"],
+                        "body-md": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["32px", { "lineHeight": "40px", "fontWeight": "700" }],
+                        "title-lg": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "headline-lg": ["40px", { "lineHeight": "48px", "fontWeight": "700" }],
+                        "headline-md": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "display-lg": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-sm": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<nav class="flex justify-between items-center px-margin-desktop py-base w-full sticky top-0 z-50 shadow-sm bg-surface dark:bg-on-background">
+<div class="font-headline-sm text-headline-sm font-bold text-primary dark:text-primary-fixed">
+            Creation Stewards
+        </div>
+<div class="hidden md:flex gap-md items-center">
+<a class="text-on-surface-variant dark:text-surface-variant font-medium hover:text-secondary transition-colors duration-200" href="index.html">Home</a>
+<a class="text-on-surface-variant dark:text-surface-variant font-medium hover:text-secondary transition-colors duration-200" href="About.html">About Us</a>
+<a class="text-on-surface-variant dark:text-surface-variant font-medium hover:text-secondary transition-colors duration-200" href="Program.html">Our Program</a>
+<a class="text-on-surface-variant dark:text-surface-variant font-medium hover:text-secondary transition-colors duration-200" href="Contact.html">Contact Us</a>
+</div>
+<div class="flex gap-sm items-center">
+<a href="Donate.html" class="font-label-md text-label-md px-sm py-xs border border-primary text-primary rounded hover:bg-surface-variant transition-colors inline-block">Sponsor</a>
+<a href="Donate.html" class="font-label-md text-label-md px-sm py-xs bg-primary text-on-primary rounded opacity-80 transition-all duration-200 inline-block">Donate</a>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="flex-grow flex flex-col gap-lg pb-xl">
+<!-- Hero Section -->
+<section class="relative w-full h-[60vh] min-h-[500px] flex items-center justify-center px-margin-desktop bg-primary-container overflow-hidden">
+<div class="absolute inset-0 z-0 opacity-40 mix-blend-overlay">
+<img class="w-full h-full object-cover" data-alt="A sweeping, aerial view of a lush, vibrant green valley in Uganda at sunrise. Warm, golden sunlight bathes the rolling hills and newly planted saplings. The scene conveys profound hope, growth, and the rich tactile warmth of nature. A modern, corporate-yet-earthy aesthetic dominates the composition." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLP9mpSBTeHUIbueLxp3ikR__-L0QqVn2BCSEIzxXi8t0l79O9WjEYxpgh2-Ly753bSoH2dLCZT5iqWKIZH0GLVrBs3Et4cLr3ZFMv9I74eiJ5daMMLvr-JkvZ-NsuZoZ51Y9MKmnfFsnsq0h1LBm37Ju1XJBxqyo_lhJ0VTUzIEIA0TyxrSOlTv0Be67LUWFCCe5DR_DW6fGobjDmvKwEAv0Bt8irS6xYbLUJRw56OZaFv2puitE0Yw"/>
+</div>
+<div class="relative z-10 text-center max-w-4xl flex flex-col gap-md">
+<h1 class="font-display-lg text-display-lg text-on-primary">Invest in the Soil of Our Communities</h1>
+<p class="font-body-lg text-body-lg text-primary-fixed">Your contribution plants hope, sustains life, and empowers local stewardship for a greener tomorrow.</p>
+</div>
+</section>
+<div class="px-margin-desktop max-w-[1200px] mx-auto w-full grid grid-cols-1 md:grid-cols-12 gap-gutter items-start">
+<!-- Left Column: Impact & Story -->
+<div class="md:col-span-7 flex flex-col gap-lg">
+<!-- Your Impact Section (Bento Grid) -->
+<section class="flex flex-col gap-md">
+<h2 class="font-headline-md text-headline-md text-primary">Your Impact Breakdown</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">A typical donation of <span class="font-bold text-tertiary-fixed-dim">UGX 1,125,000</span> provides tangible, lasting change in a community.</p>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-sm">
+<!-- Impact Card 1 -->
+<div class="bg-surface-container-lowest border border-primary/10 rounded-lg p-md flex flex-col gap-sm shadow-[0px_10px_30px_rgba(27,67,50,0.08)] border-t-4 border-t-tertiary-fixed-dim">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary text-3xl" style="font-variation-settings: 'FILL' 1;">forest</span>
+<h3 class="font-title-lg text-title-lg text-primary">100 Trees Planted</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Indigenous saplings to restore local ecosystems and combat soil erosion.</p>
+</div>
+<!-- Impact Card 2 -->
+<div class="bg-surface-container-lowest border border-primary/10 rounded-lg p-md flex flex-col gap-sm shadow-[0px_10px_30px_rgba(27,67,50,0.08)]">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-secondary text-3xl" style="font-variation-settings: 'FILL' 1;">delete</span>
+<h3 class="font-title-lg text-title-lg text-secondary">3 Recycling Bins</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Community waste management stations to promote clean streets and recycling habits.</p>
+</div>
+<!-- Impact Card 3 -->
+<div class="bg-surface-container-lowest border border-primary/10 rounded-lg p-md flex flex-col gap-sm shadow-[0px_10px_30px_rgba(27,67,50,0.08)] sm:col-span-2">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary text-3xl" style="font-variation-settings: 'FILL' 1;">groups</span>
+<h3 class="font-title-lg text-title-lg text-primary">1 Stewardship Seminar</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Comprehensive training for 50 local leaders on sustainable agriculture and environmental conservation techniques.</p>
+</div>
+</div>
+</section>
+<section class="bg-surface-container-low p-md rounded-lg flex flex-col gap-sm border border-outline-variant">
+<h3 class="font-title-lg text-title-lg text-primary flex items-center gap-sm">
+<span class="material-symbols-outlined text-tertiary-fixed-dim">verified</span>
+                        Transparent Giving
+                    </h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Every shilling is tracked. We pride ourselves on financial transparency, ensuring your investment directly fuels our grassroots initiatives.</p>
+</section>
+</div>
+<!-- Right Column: Donation Form -->
+<div class="md:col-span-5 bg-surface-container-lowest p-lg rounded-xl shadow-[0px_10px_30px_rgba(27,67,50,0.08)] border border-primary/10 sticky top-32">
+<h2 class="font-headline-sm text-headline-sm text-primary mb-sm">Give Today</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md">Select your preferred method and amount to empower stewardship.</p>
+<form class="flex flex-col gap-md">
+<!-- Amount Selection -->
+<div class="flex flex-col gap-sm">
+<label class="font-label-md text-label-md text-primary">Select Amount (UGX)</label>
+<div class="grid grid-cols-2 gap-sm">
+<button class="py-sm border border-primary rounded font-label-md text-label-md text-primary hover:bg-surface-variant focus:ring-2 focus:ring-secondary focus:outline-none" type="button">250,000</button>
+<button class="py-sm border border-primary rounded font-label-md text-label-md text-primary hover:bg-surface-variant focus:ring-2 focus:ring-secondary focus:outline-none" type="button">500,000</button>
+<button class="py-sm bg-primary text-on-primary rounded font-label-md text-label-md hover:opacity-90 focus:ring-2 focus:ring-secondary focus:outline-none" type="button">1,125,000</button>
+<button class="py-sm border border-primary rounded font-label-md text-label-md text-primary hover:bg-surface-variant focus:ring-2 focus:ring-secondary focus:outline-none" type="button">Custom</button>
+</div>
+</div>
+<!-- Payment Method Toggle -->
+<div class="flex flex-col gap-sm mt-sm">
+<label class="font-label-md text-label-md text-primary">Payment Method</label>
+<div class="flex bg-surface-container rounded p-xs gap-xs">
+<button class="flex-1 py-xs rounded bg-surface-container-lowest shadow-sm font-label-md text-label-md text-primary text-center" type="button">Mobile Money</button>
+<button class="flex-1 py-xs rounded text-on-surface-variant hover:bg-surface-variant font-label-md text-label-md text-center" type="button">Bank Transfer</button>
+</div>
+</div>
+<!-- Mobile Money Details -->
+<div class="flex flex-col gap-sm">
+<label class="font-label-md text-label-md text-primary" for="phone">Phone Number (MTN/Airtel)</label>
+<input class="w-full px-sm py-sm rounded border border-outline-variant bg-surface-container-lowest font-body-md text-body-md text-on-surface focus:border-secondary focus:ring-1 focus:ring-secondary focus:outline-none placeholder:text-outline" id="phone" placeholder="+256 7XX XXX XXX" type="tel"/>
+</div>
+<div class="flex flex-col gap-sm">
+<label class="font-label-md text-label-md text-primary" for="name">Full Name</label>
+<input class="w-full px-sm py-sm rounded border border-outline-variant bg-surface-container-lowest font-body-md text-body-md text-on-surface focus:border-secondary focus:ring-1 focus:ring-secondary focus:outline-none placeholder:text-outline" id="name" placeholder="Name on account" type="text"/>
+</div>
+<button class="mt-md w-full py-md bg-secondary text-on-secondary font-title-lg text-title-lg rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-sm" type="submit">
+                        Donate UGX 1,125,000
+                        <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</button>
+</form>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full py-lg px-margin-desktop grid grid-cols-1 md:grid-cols-3 gap-gutter bg-primary dark:bg-on-primary-fixed mt-auto">
+<div class="flex flex-col gap-sm">
+<span class="font-headline-md text-headline-md text-on-primary">Creation Stewards</span>
+<p class="font-body-md text-body-md text-on-primary/80">© 2024 Creation Stewards-Uganda. All rights reserved. Professional Stewardship for a sustainable future.</p>
+</div>
+<div class="flex flex-col gap-xs md:col-start-3 text-right">
+<a class="font-body-md text-body-md text-on-primary/80 hover:text-secondary-fixed transition-colors" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-on-primary/80 hover:text-secondary-fixed transition-colors" href="#">Terms of Service</a>
+<a class="font-body-md text-body-md text-on-primary/80 hover:text-secondary-fixed transition-colors" href="#">Volunteer Portal</a>
+</div>
+</footer>
+</body></html>

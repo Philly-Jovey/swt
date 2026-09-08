@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>About Us | Creation Stewards</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&amp;family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary": "#0c6780",
+                    "surface-variant": "#e2e3e0",
+                    "on-tertiary-container": "#d59d00",
+                    "on-primary-container": "#86af99",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary-fixed": "#baeaff",
+                    "on-secondary": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "inverse-surface": "#2f312f",
+                    "tertiary-fixed": "#ffdea3",
+                    "surface-tint": "#3f6653",
+                    "on-primary-fixed-variant": "#274e3d",
+                    "on-tertiary": "#ffffff",
+                    "on-secondary-fixed-variant": "#004d62",
+                    "inverse-primary": "#a5d0b9",
+                    "on-surface": "#1a1c1b",
+                    "tertiary": "#342300",
+                    "error-container": "#ffdad6",
+                    "error": "#ba1a1a",
+                    "on-primary-fixed": "#002114",
+                    "surface-container": "#eeeeeb",
+                    "on-secondary-fixed": "#001f29",
+                    "surface-dim": "#dadad7",
+                    "inverse-on-surface": "#f1f1ee",
+                    "secondary-container": "#9ae1ff",
+                    "background": "#f9f9f6",
+                    "on-secondary-container": "#09657f",
+                    "surface-container-highest": "#e2e3e0",
+                    "surface-bright": "#f9f9f6",
+                    "outline-variant": "#c1c8c2",
+                    "on-surface-variant": "#414844",
+                    "on-tertiary-fixed-variant": "#5d4200",
+                    "on-error": "#ffffff",
+                    "primary-fixed-dim": "#a5d0b9",
+                    "surface": "#f9f9f6",
+                    "surface-container-low": "#f4f4f1",
+                    "on-error-container": "#93000a",
+                    "primary-fixed": "#c1ecd4",
+                    "surface-container-high": "#e8e8e5",
+                    "tertiary-container": "#4f3800",
+                    "primary-container": "#1b4332",
+                    "outline": "#717973",
+                    "on-background": "#1a1c1b",
+                    "tertiary-fixed-dim": "#fdbc13",
+                    "secondary-fixed-dim": "#89d0ed",
+                    "on-tertiary-fixed": "#261900",
+                    "primary": "#012d1d"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xl": "80px",
+                    "margin-mobile": "16px",
+                    "md": "24px",
+                    "base": "8px",
+                    "margin-desktop": "64px",
+                    "lg": "48px",
+                    "sm": "12px",
+                    "xs": "4px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "headline-lg-mobile": [
+                            "Libre Caslon Text"
+                    ],
+                    "title-lg": [
+                            "Hanken Grotesk"
+                    ],
+                    "headline-lg": [
+                            "Libre Caslon Text"
+                    ],
+                    "headline-md": [
+                            "Libre Caslon Text"
+                    ],
+                    "display-lg": [
+                            "Libre Caslon Text"
+                    ],
+                    "body-lg": [
+                            "Hanken Grotesk"
+                    ],
+                    "headline-sm": [
+                            "Libre Caslon Text"
+                    ],
+                    "label-md": [
+                            "Hanken Grotesk"
+                    ],
+                    "body-md": [
+                            "Hanken Grotesk"
+                    ]
+            },
+            "fontSize": {
+                    "headline-lg-mobile": [
+                            "32px",
+                            {
+                                    "lineHeight": "40px",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "title-lg": [
+                            "20px",
+                            {
+                                    "lineHeight": "28px",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "headline-lg": [
+                            "40px",
+                            {
+                                    "lineHeight": "48px",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "headline-md": [
+                            "32px",
+                            {
+                                    "lineHeight": "40px",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "display-lg": [
+                            "56px",
+                            {
+                                    "lineHeight": "64px",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "body-lg": [
+                            "18px",
+                            {
+                                    "lineHeight": "28px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "headline-sm": [
+                            "24px",
+                            {
+                                    "lineHeight": "32px",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "label-md": [
+                            "14px",
+                            {
+                                    "lineHeight": "20px",
+                                    "letterSpacing": "0.05em",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "body-md": [
+                            "16px",
+                            {
+                                    "lineHeight": "24px",
+                                    "fontWeight": "400"
+                            }
+                    ]
+            }
+    },
+        },
+      }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(27, 67, 50, 0.1);
+            box-shadow: 0px 10px 30px rgba(27, 67, 50, 0.08);
+        }
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 24px;
+        }
+        .hero-pattern {
+            background-color: #f9f9f6;
+            background-image: radial-gradient(#a5d0b9 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-lg overflow-x-hidden">
+<!-- TopNavBar -->
+<nav class="hidden md:flex justify-between items-center px-margin-desktop py-base w-full sticky top-0 z-50 bg-surface dark:bg-on-background shadow-sm docked full-width top-0">
+<div class="font-headline-sm text-headline-sm font-bold text-primary dark:text-primary-fixed">
+            Creation Stewards
+        </div>
+<div class="flex items-center gap-md">
+<a class="font-title-lg text-title-lg text-on-surface-variant dark:text-surface-variant font-medium hover:text-secondary transition-colors duration-200" href="index.html">Home</a>
+<a class="font-title-lg text-title-lg text-primary font-bold border-b-2 border-primary pb-1 opacity-80 transition-all duration-200" href="About.html">About Us</a>
+<a class="font-title-lg text-title-lg text-on-surface-variant dark:text-surface-variant font-medium hover:text-secondary transition-colors duration-200" href="Program.html">Our Program</a>
+<a class="font-title-lg text-title-lg text-on-surface-variant dark:text-surface-variant font-medium hover:text-secondary transition-colors duration-200" href="Contact.html">Contact Us</a>
+</div>
+<div class="flex items-center gap-sm">
+<a href="Donate.html" class="font-label-md text-label-md bg-transparent text-primary border border-primary px-4 py-2 rounded hover:bg-surface-container-low transition-colors duration-200 inline-block">Sponsor</a>
+<a href="Donate.html" class="font-label-md text-label-md bg-primary text-on-primary px-4 py-2 rounded hover:bg-primary-container transition-colors duration-200 inline-block">Donate</a>
+</div>
+</nav>
+<!-- Mobile Nav (Simplified for example) -->
+<nav class="md:hidden flex justify-between items-center px-margin-mobile py-base w-full sticky top-0 z-50 bg-surface shadow-sm">
+<div class="font-headline-sm text-headline-sm font-bold text-primary">Creation Stewards</div>
+<button class="material-symbols-outlined text-primary text-3xl">menu</button>
+</nav>
+<main class="w-full">
+<!-- Hero Section -->
+<section class="relative w-full min-h-[60vh] flex flex-col justify-center items-center px-margin-mobile md:px-margin-desktop py-xl hero-pattern">
+<div class="absolute inset-0 bg-gradient-to-b from-transparent to-background/80 pointer-events-none"></div>
+<div class="relative z-10 max-w-4xl text-center space-y-md">
+<span class="inline-block px-4 py-1 rounded-full bg-secondary-fixed/20 text-primary font-label-md text-label-md border border-primary/10">About Us</span>
+<h1 class="font-display-lg text-display-lg md:text-[72px] md:leading-[80px] text-primary">Stewards of <br/><span class="text-secondary">Creation</span></h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+                    We are a passionate community dedicated to restoring Uganda's landscapes through faith-driven action and professional stewardship.
+                </p>
+</div>
+</section>
+<!-- Bento Grid Layout for Main Content -->
+<section class="px-margin-mobile md:px-margin-desktop py-lg w-full max-w-[1200px] mx-auto">
+<div class="bento-grid">
+<!-- Our Identity (Large Card) -->
+<div class="col-span-12 md:col-span-8 glass-card rounded-xl p-lg flex flex-col justify-center relative overflow-hidden group">
+<div class="absolute top-0 left-0 w-full h-1 bg-tertiary-fixed-dim"></div>
+<div class="relative z-10 space-y-md">
+<div class="flex items-center gap-sm text-secondary">
+<span class="material-symbols-outlined text-3xl" data-weight="fill">diversity_3</span>
+<h2 class="font-headline-md text-headline-md text-primary">Our Identity</h2>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+                            Creation Stewards-Uganda is a non-governmental organization rooted in the profound belief that caring for the earth is an act of worship and responsibility. Founded by a coalition of community leaders and environmental professionals, we bridge the gap between grassroots passion and sustainable ecological practices. Our identity is forged in the rich, vibrant landscapes of Uganda, driven by a commitment to protect biodiversity and empower local communities to become guardians of their natural heritage.
+                        </p>
+</div>
+<div class="absolute -bottom-10 -right-10 opacity-5 group-hover:opacity-10 transition-opacity duration-500 pointer-events-none">
+<span class="material-symbols-outlined text-[200px]" data-weight="fill">public</span>
+</div>
+</div>
+<!-- Biblical Foundation (Tall Card) -->
+<div class="col-span-12 md:col-span-4 glass-card rounded-xl p-lg flex flex-col justify-between bg-primary text-on-primary">
+<div class="space-y-sm">
+<span class="material-symbols-outlined text-4xl text-tertiary-fixed-dim" data-weight="fill">menu_book</span>
+<h2 class="font-headline-sm text-headline-sm text-secondary-fixed">Biblical Foundation</h2>
+</div>
+<blockquote class="my-md">
+<p class="font-headline-lg-mobile text-headline-lg-mobile md:text-headline-sm md:font-headline-sm italic opacity-90 leading-relaxed">
+                            "The Lord God took the man and put him in the Garden of Eden to work it and take care of it."
+                        </p>
+<footer class="mt-sm font-label-md text-label-md text-secondary-fixed">— Genesis 2:15</footer>
+</blockquote>
+<p class="font-body-md text-body-md opacity-80 mt-auto">
+                        This mandate calls us beyond mere conservation; it is an active, joyful stewardship of the gifts we have been entrusted with.
+                    </p>
+</div>
+<!-- Our Vision (Square-ish Card) -->
+<div class="col-span-12 md:col-span-6 glass-card rounded-xl p-lg space-y-md">
+<div class="w-12 h-12 rounded-full bg-secondary-fixed/30 flex items-center justify-center text-secondary mb-sm">
+<span class="material-symbols-outlined text-2xl" data-weight="fill">visibility</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-primary">Our Vision</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+                        To see communities and ecosystems thriving in harmony. We envision restored landscapes across Uganda where forests flourish, soils are healed, and communities are uplifted through sustainable livelihoods, reflecting the beauty and abundance of a carefully stewarded creation.
+                    </p>
+</div>
+<!-- Our Mission (Square-ish Card) -->
+<div class="col-span-12 md:col-span-6 glass-card rounded-xl p-lg space-y-md border-t-4 border-secondary">
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-sm">
+<span class="material-symbols-outlined text-2xl" data-weight="fill">rocket_launch</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-primary">Our Mission</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+                        To mobilize, equip, and empower faith communities and local leaders across Uganda to implement practical, scientifically sound environmental conservation projects. We strive to foster a culture of active stewardship through education, tree planting, and sustainable agriculture.
+                    </p>
+</div>
+<!-- Image Section (Spanning full width) -->
+<div class="col-span-12 rounded-xl overflow-hidden h-[400px] relative mt-md">
+<div class="bg-cover bg-center w-full h-full" data-alt="A wide panoramic shot of a lush, vibrant green landscape in Uganda. In the foreground, a diverse group of community members, including women in colorful traditional dresses and young men in plain work clothes, are actively planting saplings in rich, dark soil. The lighting is bright, golden-hour sunlight casting long, warm shadows. The mood is hopeful, energetic, and collaborative, emphasizing grassroots environmental action and community stewardship. High-quality, documentary style photography, corporate modern aesthetic with tactile warmth." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDH-2ImitamsN1MZO55rGxqsECKOypXsSyLlUK2BolviS2OGgrRy2UrIRVYomIWd6xEI1-bkAlXIzmX5G94L4UZx4zO4fHpuHoHoXC7Rt4QTWE2hupjgrS7BBrmjIkuuACgDmQQU6Y1BLwZjme3UMXe9tqA6GKcaLG8NSGZdursCnrjEAM7CoJ7oh2YroO91FcnpFfmKkUnTXGql3ixhj7LYLt8Intr_lmkkcm6vimC9pi2AM2_XTsI7A')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent flex items-end p-lg">
+<div class="text-on-primary">
+<p class="font-title-lg text-title-lg">Community Action</p>
+<p class="font-body-md text-body-md opacity-80">Planting the seeds for a sustainable tomorrow.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-lg px-margin-desktop grid grid-cols-1 md:grid-cols-3 gap-gutter bg-primary dark:bg-on-primary-fixed full-width bottom">
+<div class="flex flex-col space-y-sm">
+<div class="font-headline-md text-headline-md text-on-primary">
+                Creation Stewards
+            </div>
+<p class="font-body-md text-body-md text-on-primary/80 max-w-sm mt-sm">
+                Professional Stewardship for a sustainable future. Empowering communities through faith and action.
+            </p>
+</div>
+<div class="flex flex-col space-y-md md:col-span-2 md:items-end">
+<div class="flex flex-wrap gap-md font-body-md text-body-md">
+<a class="text-on-primary/80 hover:text-secondary-fixed transition-colors" href="#">Privacy Policy</a>
+<a class="text-on-primary/80 hover:text-secondary-fixed transition-colors" href="#">Terms of Service</a>
+<a class="text-on-primary/80 hover:text-secondary-fixed transition-colors" href="#">Volunteer Portal</a>
+</div>
+<div class="font-body-md text-body-md text-on-primary/60 text-sm">
+                © 2024 Creation Stewards-Uganda. All rights reserved. Professional Stewardship for a sustainable future.
+            </div>
+</div>
+</footer>
+</body></html>
