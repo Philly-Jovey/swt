@@ -118,7 +118,7 @@
 </head>
 <body class="bg-background text-on-background font-body-lg">
 <!-- TopNavBar -->
-<nav class="flex justify-between items-center px-margin-desktop py-base w-full sticky top-0 z-50 shadow-sm bg-surface dark:bg-on-background h-20">
+<nav class="relative flex justify-between items-center px-margin-desktop py-base w-full sticky top-0 z-50 shadow-sm bg-surface dark:bg-on-background h-20">
 <div class="font-headline-sm text-headline-sm font-bold text-primary dark:text-primary-fixed tracking-tight">Creation Stewards</div>
 <div class="hidden md:flex space-x-6">
 <a class="text-primary font-bold border-b-2 border-primary pb-1 font-title-lg text-title-lg transition-all duration-200" href="index.html">Home</a>
@@ -130,9 +130,18 @@
 <a href="Donate.html" class="bg-secondary text-primary font-label-md text-label-md px-6 py-2 rounded-full hover:bg-opacity-90 transition-all font-bold inline-block">Donate</a>
 <a href="Donate.html" class="bg-primary text-on-primary font-label-md text-label-md px-6 py-2 rounded-full hover:bg-opacity-90 transition-all font-bold inline-block">Sponsor</a>
 </div>
-<button class="md:hidden text-primary">
+<button type="button" class="md:hidden text-primary" data-menu-button aria-expanded="false" aria-controls="mobile-menu">
 <span class="material-symbols-outlined" data-icon="menu">menu</span>
 </button>
+<div id="mobile-menu" class="hidden absolute right-4 top-full mt-2 w-56 rounded-lg bg-surface p-4 shadow-lg ring-1 ring-primary/10 md:hidden">
+<div class="flex flex-col gap-3">
+<a class="text-primary font-bold" href="index.html">Home</a>
+<a class="text-on-surface-variant" href="About.html">About Us</a>
+<a class="text-on-surface-variant" href="Program.html">Our Program</a>
+<a class="text-on-surface-variant" href="Contact.html">Contact Us</a>
+<a class="bg-primary px-4 py-2 text-center font-bold text-on-primary rounded" href="Donate.html">Donate</a>
+</div>
+</div>
 </nav>
 <!-- Hero Section -->
 <section class="relative w-full h-[80vh] flex items-center justify-center">
@@ -249,4 +258,13 @@
 <p class="font-body-md text-body-md text-on-primary/60 text-sm">© 2024 Creation Stewards-Uganda. All rights reserved.</p>
 </div>
 </footer>
+<script>
+document.querySelectorAll('[data-menu-button]').forEach(function (button) {
+    button.addEventListener('click', function () {
+        var menu = document.getElementById(button.getAttribute('aria-controls'));
+        var isOpen = !menu.classList.toggle('hidden');
+        button.setAttribute('aria-expanded', String(isOpen));
+    });
+});
+</script>
 </body></html>

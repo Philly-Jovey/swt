@@ -108,7 +108,7 @@
 </head>
 <body class="bg-background text-on-background font-body-md min-h-screen flex flex-col">
 <!-- TopNavBar -->
-<nav class="flex justify-between items-center px-margin-desktop py-base w-full sticky top-0 z-50 shadow-sm bg-surface dark:bg-on-background">
+<nav class="relative flex justify-between items-center px-margin-desktop py-base w-full sticky top-0 z-50 shadow-sm bg-surface dark:bg-on-background">
 <div class="font-headline-sm text-headline-sm font-bold text-primary dark:text-primary-fixed">
             Creation Stewards
         </div>
@@ -121,6 +121,18 @@
 <div class="flex gap-sm items-center">
 <a href="Donate.html" class="font-label-md text-label-md px-sm py-xs border border-primary text-primary rounded hover:bg-surface-variant transition-colors inline-block">Sponsor</a>
 <a href="Donate.html" class="font-label-md text-label-md px-sm py-xs bg-primary text-on-primary rounded opacity-80 transition-all duration-200 inline-block">Donate</a>
+</div>
+<button type="button" class="md:hidden text-primary" data-menu-button aria-expanded="false" aria-controls="mobile-menu">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<div id="mobile-menu" class="hidden absolute right-4 top-full mt-2 w-56 rounded-lg bg-surface p-4 shadow-lg ring-1 ring-primary/10 md:hidden">
+<div class="flex flex-col gap-3">
+<a class="text-on-surface-variant" href="index.html">Home</a>
+<a class="text-on-surface-variant" href="About.html">About Us</a>
+<a class="text-on-surface-variant" href="Program.html">Our Program</a>
+<a class="text-on-surface-variant" href="Contact.html">Contact Us</a>
+<a class="text-primary font-bold" href="Donate.html">Donate</a>
+</div>
 </div>
 </nav>
 <!-- Main Content -->
@@ -229,4 +241,13 @@
 <a class="font-body-md text-body-md text-on-primary/80 hover:text-secondary-fixed transition-colors" href="#">Volunteer Portal</a>
 </div>
 </footer>
+<script>
+document.querySelectorAll('[data-menu-button]').forEach(function (button) {
+    button.addEventListener('click', function () {
+        var menu = document.getElementById(button.getAttribute('aria-controls'));
+        var isOpen = !menu.classList.toggle('hidden');
+        button.setAttribute('aria-expanded', String(isOpen));
+    });
+});
+</script>
 </body></html>

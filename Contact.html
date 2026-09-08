@@ -126,7 +126,7 @@
 </head>
 <body class="bg-background text-on-background font-body-lg antialiased">
 <!-- TopNavBar -->
-<nav class="bg-surface shadow-sm docked full-width top-0 flex justify-between items-center px-margin-mobile md:px-margin-desktop py-base w-full sticky top-0 z-50">
+<nav class="relative bg-surface shadow-sm docked full-width top-0 flex justify-between items-center px-margin-mobile md:px-margin-desktop py-base w-full sticky top-0 z-50">
 <div class="font-headline-sm text-headline-sm font-bold text-primary">Creation Stewards</div>
 <div class="hidden md:flex gap-gutter items-center">
 <a class="text-on-surface-variant font-medium hover:text-secondary transition-colors duration-200" href="index.html">Home</a>
@@ -138,9 +138,18 @@
 <a href="Donate.html" class="px-md py-sm rounded border border-primary text-primary font-label-md hover:bg-surface-container-low transition-colors inline-block">Sponsor</a>
 <a href="Donate.html" class="px-md py-sm rounded bg-primary text-on-primary font-label-md hover:opacity-90 transition-opacity inline-block">Donate</a>
 </div>
-<button class="md:hidden text-primary">
+<button type="button" class="md:hidden text-primary" data-menu-button aria-expanded="false" aria-controls="mobile-menu">
 <span class="material-symbols-outlined">menu</span>
 </button>
+<div id="mobile-menu" class="hidden absolute right-4 top-full mt-2 w-56 rounded-lg bg-surface p-4 shadow-lg ring-1 ring-primary/10 md:hidden">
+<div class="flex flex-col gap-3">
+<a class="text-on-surface-variant" href="index.html">Home</a>
+<a class="text-on-surface-variant" href="About.html">About Us</a>
+<a class="text-on-surface-variant" href="Program.html">Our Program</a>
+<a class="text-primary font-bold" href="Contact.html">Contact Us</a>
+<a class="bg-primary px-4 py-2 text-center font-bold text-on-primary rounded" href="Donate.html">Donate</a>
+</div>
+</div>
 </nav>
 <!-- Main Content Canvas -->
 <main class="max-w-[1200px] mx-auto px-margin-mobile md:px-margin-desktop py-lg space-y-xl">
@@ -246,4 +255,13 @@
 </div>
 </div>
 </footer>
+<script>
+document.querySelectorAll('[data-menu-button]').forEach(function (button) {
+    button.addEventListener('click', function () {
+        var menu = document.getElementById(button.getAttribute('aria-controls'));
+        var isOpen = !menu.classList.toggle('hidden');
+        button.setAttribute('aria-expanded', String(isOpen));
+    });
+});
+</script>
 </body></html>

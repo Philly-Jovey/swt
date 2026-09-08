@@ -138,9 +138,18 @@
 </div>
 </nav>
 <!-- Mobile Nav (Simplified for example) -->
-<nav class="md:hidden flex justify-between items-center px-margin-mobile py-base w-full sticky top-0 z-50 shadow-sm bg-surface">
+<nav class="relative md:hidden flex justify-between items-center px-margin-mobile py-base w-full sticky top-0 z-50 shadow-sm bg-surface">
 <div class="font-headline-sm text-headline-sm font-bold text-primary">Creation Stewards</div>
-<button><span class="material-symbols-outlined">menu</span></button>
+<button type="button" data-menu-button aria-expanded="false" aria-controls="mobile-menu"><span class="material-symbols-outlined">menu</span></button>
+<div id="mobile-menu" class="hidden absolute right-4 top-full mt-2 w-56 rounded-lg bg-surface p-4 shadow-lg ring-1 ring-primary/10">
+<div class="flex flex-col gap-3">
+<a class="text-on-surface-variant" href="index.html">Home</a>
+<a class="text-on-surface-variant" href="About.html">About Us</a>
+<a class="text-primary font-bold" href="Program.html">Our Program</a>
+<a class="text-on-surface-variant" href="Contact.html">Contact Us</a>
+<a class="bg-primary px-4 py-2 text-center font-bold text-on-primary rounded" href="Donate.html">Donate</a>
+</div>
+</div>
 </nav>
 <main class="flex-grow w-full max-w-[1200px] mx-auto px-margin-mobile md:px-margin-desktop py-lg">
 <!-- Header Section -->
@@ -257,4 +266,13 @@
             © 2024 Creation Stewards-Uganda. All rights reserved. Professional Stewardship for a sustainable future.
         </div>
 </footer>
+<script>
+document.querySelectorAll('[data-menu-button]').forEach(function (button) {
+    button.addEventListener('click', function () {
+        var menu = document.getElementById(button.getAttribute('aria-controls'));
+        var isOpen = !menu.classList.toggle('hidden');
+        button.setAttribute('aria-expanded', String(isOpen));
+    });
+});
+</script>
 </body></html>
