@@ -208,12 +208,12 @@
 <div class="flex flex-col gap-sm mt-sm">
 <label class="font-label-md text-label-md text-primary">Payment Method</label>
 <div class="flex bg-surface-container rounded p-xs gap-xs">
-<button class="flex-1 py-xs rounded bg-surface-container-lowest shadow-sm font-label-md text-label-md text-primary text-center" type="button">Mobile Money</button>
-<button class="flex-1 py-xs rounded text-on-surface-variant hover:bg-surface-variant font-label-md text-label-md text-center" type="button">Bank Transfer</button>
+<button class="flex-1 py-xs rounded bg-surface-container-lowest shadow-sm font-label-md text-label-md text-primary text-center" data-payment-method="mobile" type="button" aria-pressed="true">Mobile Money</button>
+<button class="flex-1 py-xs rounded text-on-surface-variant hover:bg-surface-variant font-label-md text-label-md text-center" data-payment-method="bank" type="button" aria-pressed="false">Bank Transfer</button>
 </div>
 </div>
 <!-- Mobile Money Details -->
-<div class="flex flex-col gap-sm">
+<div class="flex flex-col gap-sm" data-payment-panel="mobile">
 <label class="font-label-md text-label-md text-primary" for="phone">Phone Number (MTN/Airtel)</label>
 <input class="w-full px-sm py-sm rounded border border-outline-variant bg-surface-container-lowest font-body-md text-body-md text-on-surface focus:border-secondary focus:ring-1 focus:ring-secondary focus:outline-none placeholder:text-outline" id="phone" placeholder="+256 7XX XXX XXX" type="tel"/>
 </div>
@@ -221,8 +221,19 @@
 <label class="font-label-md text-label-md text-primary" for="name">Full Name</label>
 <input class="w-full px-sm py-sm rounded border border-outline-variant bg-surface-container-lowest font-body-md text-body-md text-on-surface focus:border-secondary focus:ring-1 focus:ring-secondary focus:outline-none placeholder:text-outline" id="name" placeholder="Name on account" type="text"/>
 </div>
+<!-- Bank Transfer Details -->
+<div class="hidden flex flex-col gap-sm rounded-lg bg-surface-container-low p-md border border-outline-variant" data-payment-panel="bank">
+<h3 class="font-title-lg text-title-lg text-primary">Bank Transfer Details</h3>
+<dl class="flex flex-col gap-xs font-body-md text-body-md text-on-surface-variant">
+<div class="flex justify-between gap-md"><dt class="font-bold">Bank</dt><dd>Centenary Bank</dd></div>
+<div class="flex justify-between gap-md"><dt class="font-bold">Account Name</dt><dd>Creation Stewards-Uganda</dd></div>
+<div class="flex justify-between gap-md"><dt class="font-bold">Account Number</dt><dd>xxx xxx xxx</dd></div>
+<div class="flex justify-between gap-md"><dt class="font-bold">Branch</dt><dd>Wadengeya Branch</dd></div>
+</dl>
+<p class="text-sm text-on-surface-variant">Please use your full name as the transfer reference and keep your payment receipt.</p>
+</div>
 <button class="mt-md w-full py-md bg-secondary text-on-secondary font-title-lg text-title-lg rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-sm" type="submit">
-                        Donate UGX 1,125,000
+                        Donate
                         <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">favorite</span>
 </button>
 </form>
@@ -247,6 +258,28 @@ document.querySelectorAll('[data-menu-button]').forEach(function (button) {
         var menu = document.getElementById(button.getAttribute('aria-controls'));
         var isOpen = !menu.classList.toggle('hidden');
         button.setAttribute('aria-expanded', String(isOpen));
+    });
+});
+
+var paymentButtons = document.querySelectorAll('[data-payment-method]');
+var paymentPanels = document.querySelectorAll('[data-payment-panel]');
+
+paymentButtons.forEach(function (button) {
+    button.addEventListener('click', function () {
+        var selectedMethod = button.getAttribute('data-payment-method');
+
+        paymentButtons.forEach(function (paymentButton) {
+            var isSelected = paymentButton === button;
+            paymentButton.setAttribute('aria-pressed', String(isSelected));
+            paymentButton.classList.toggle('bg-surface-container-lowest', isSelected);
+            paymentButton.classList.toggle('shadow-sm', isSelected);
+            paymentButton.classList.toggle('text-primary', isSelected);
+            paymentButton.classList.toggle('text-on-surface-variant', !isSelected);
+        });
+
+        paymentPanels.forEach(function (panel) {
+            panel.classList.toggle('hidden', panel.getAttribute('data-payment-panel') !== selectedMethod);
+        });
     });
 });
 </script>
