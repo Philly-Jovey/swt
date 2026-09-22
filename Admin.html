@@ -180,6 +180,16 @@
       }
     </script>
 <style>
+                #protected-shell,
+                #protected-main {
+                        display: none !important;
+                }
+                body.authenticated #protected-shell {
+                        display: flex !important;
+                }
+                body.authenticated #protected-main {
+                        display: block !important;
+                }
         /* Custom scrollbar for webkit */
         ::-webkit-scrollbar {
             width: 8px;
@@ -198,8 +208,24 @@
     </style>
 </head>
 <body class="bg-background text-on-surface font-body-md antialiased h-screen overflow-hidden flex">
+<section id="login-screen" class="fixed inset-0 z-50 flex items-center justify-center bg-primary px-4 py-8">
+<div class="w-full max-w-md rounded-xl bg-surface-container-lowest p-6 md:p-8 shadow-2xl">
+<div class="mb-6 text-center">
+<span class="material-symbols-outlined text-5xl text-secondary">admin_panel_settings</span>
+<h1 class="font-headline-md text-headline-md text-primary mt-3">Admin login</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2">Sign in to manage content, users, and reports.</p>
+</div>
+<form id="login-form" class="flex flex-col gap-md" novalidate>
+<label class="flex flex-col gap-xs font-label-md text-label-md text-on-surface" for="login-email">Email address<input id="login-email" class="rounded-lg border border-outline-variant bg-surface-bright px-sm py-sm font-body-md" name="email" type="email" autocomplete="username" required placeholder="Email address"/></label>
+<label class="flex flex-col gap-xs font-label-md text-label-md text-on-surface" for="login-password">Password<input id="login-password" class="rounded-lg border border-outline-variant bg-surface-bright px-sm py-sm font-body-md" name="password" type="password" autocomplete="current-password" minlength="8" required placeholder="Enter your password"/></label>
+<p id="login-error" class="hidden rounded-lg bg-error-container px-sm py-sm text-sm text-on-error-container" role="alert"></p>
+<button class="rounded-lg bg-primary px-md py-sm text-on-primary font-label-md hover:bg-primary-container" type="submit"><span class="material-symbols-outlined align-middle text-[18px]">login</span> Sign in</button>
+</form>
+<p class="mt-5 text-center text-xs text-on-surface-variant">Authentication must be connected to a secure server before this site handles real accounts.</p>
+</div>
+</section>
 <!-- SideNavBar -->
-<nav class="hidden md:flex fixed left-0 top-0 h-screen w-64 flex-col p-md bg-surface-container-low dark:bg-on-background border-r border-outline-variant z-40">
+<nav id="protected-shell" class="hidden md:flex fixed left-0 top-0 h-screen w-64 flex-col p-md bg-surface-container-low dark:bg-on-background border-r border-outline-variant z-40">
 <!-- Header -->
 <div class="flex items-center gap-sm mb-lg">
 <img alt="Admin User" class="w-12 h-12 rounded-full object-cover border-2 border-secondary" data-alt="A small, professional portrait photograph of an African administrator in a bright, modern office setting. The image should be warm, approachable, and well-lit with natural sunlight, fitting a professional stewardship aesthetic with subtle green and gold tones in the background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9Css92rnMqyU5dDqbN_u1uFSk9jFMNEIAhsL1gA7j-jU8YC-hUpQJXWVh2Wmi7caY7KONg2MnD32Tsp7SD5DIvDterYVGLb_ZEl-5fO--bUpr-p9nECnriCCRdz-45r0b0WDTE6b4NS_avJ0Egux_j_PTsFK7dTx3emsX_tH8RTmQ1RafSe-czhvYTtmhOebY4h6-DncSMsMT-Yz12fO_v59KTt3m-U80kJZKbW1c3sfZBmMTJrCWYQ"/>
@@ -211,25 +237,25 @@
 <!-- Navigation Links -->
 <ul class="flex flex-col gap-sm flex-1 m-0 p-0 list-none font-label-md text-label-md">
 <li>
-<a class="flex items-center gap-sm text-primary font-bold bg-secondary-container dark:bg-secondary text-on-secondary-container rounded-lg px-4 py-3 w-full scale-95 transition-transform" href="#">
+<a class="flex items-center gap-sm text-primary font-bold bg-secondary-container dark:bg-secondary text-on-secondary-container rounded-lg px-4 py-3 w-full scale-95 transition-transform" href="#dashboard" aria-current="page">
 <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">dashboard</span>
                     Dashboard
                 </a>
 </li>
 <li>
-<a class="flex items-center gap-sm text-on-surface-variant dark:text-surface-variant p-2 rounded-lg px-4 py-3 w-full hover:bg-surface-container-high dark:hover:bg-surface-variant transition-colors" href="#">
+<a class="flex items-center gap-sm text-on-surface-variant dark:text-surface-variant p-2 rounded-lg px-4 py-3 w-full hover:bg-surface-container-high dark:hover:bg-surface-variant transition-colors" href="#content-management">
 <span class="material-symbols-outlined">edit_note</span>
                     Content Management
                 </a>
 </li>
 <li>
-<a class="flex items-center gap-sm text-on-surface-variant dark:text-surface-variant p-2 rounded-lg px-4 py-3 w-full hover:bg-surface-container-high dark:hover:bg-surface-variant transition-colors" href="#">
+<a class="flex items-center gap-sm text-on-surface-variant dark:text-surface-variant p-2 rounded-lg px-4 py-3 w-full hover:bg-surface-container-high dark:hover:bg-surface-variant transition-colors" href="#user-management">
 <span class="material-symbols-outlined">group</span>
                     User Management
                 </a>
 </li>
 <li>
-<a class="flex items-center gap-sm text-on-surface-variant dark:text-surface-variant p-2 rounded-lg px-4 py-3 w-full hover:bg-surface-container-high dark:hover:bg-surface-variant transition-colors" href="#">
+<a class="flex items-center gap-sm text-on-surface-variant dark:text-surface-variant p-2 rounded-lg px-4 py-3 w-full hover:bg-surface-container-high dark:hover:bg-surface-variant transition-colors" href="#reports">
 <span class="material-symbols-outlined">assessment</span>
                     Reports
                 </a>
@@ -237,25 +263,33 @@
 </ul>
 <!-- Bottom Actions -->
 <div class="mt-auto">
-<button class="w-full py-2 px-4 rounded-lg bg-surface-container border border-outline-variant text-on-surface font-label-md hover:bg-surface-variant transition-colors flex items-center justify-center gap-2">
+<button id="logout-button" class="w-full py-2 px-4 rounded-lg bg-surface-container border border-outline-variant text-on-surface font-label-md hover:bg-surface-variant transition-colors flex items-center justify-center gap-2" type="button">
 <span class="material-symbols-outlined text-[18px]">logout</span>
                 Logout
             </button>
 </div>
 </nav>
 <!-- Main Content Area -->
-<main class="flex-1 md:ml-64 h-full overflow-y-auto bg-background">
+<main id="protected-main" class="flex-1 md:ml-64 h-full overflow-y-auto bg-background">
 <!-- Mobile Header (Visible only on small screens) -->
 <header class="md:hidden flex items-center justify-between p-margin-mobile bg-surface-container-low border-b border-outline-variant sticky top-0 z-30">
 <div class="flex items-center gap-sm">
 <img alt="Admin User" class="w-8 h-8 rounded-full object-cover border border-secondary" data-alt="A small, professional portrait photograph of an African administrator in a bright, modern office setting. The image should be warm, approachable, and well-lit with natural sunlight, fitting a professional stewardship aesthetic with subtle green and gold tones in the background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZGydF4XY-AgCzB7uYdLJvA2XjreCCIUUyFUqT1eI46IZVjL4XiNRXhXX62DaUzJlDFnVNonOx1IPNu6czEjGLdko2O2csVNCby0hDy01SzBCs2t-yDwOSNhKbqiYF-vdD34WopfHieVxJpyLEnKgaE3iQyN3VzAmTfaxGOgtCZ3XHW5J2COu3kgwKuW6Iyf6l2jX4IYwVCBnAZPCR11D0YQB9rfwfdN6EeiUuqn-sn44_QBWr8NGopg"/>
 <h1 class="font-headline-sm text-headline-sm text-primary m-0">Dashboard</h1>
 </div>
-<button class="text-on-surface-variant p-2">
+<button class="text-on-surface-variant p-2" type="button" data-admin-menu-button aria-expanded="false" aria-controls="admin-mobile-menu">
 <span class="material-symbols-outlined">menu</span>
 </button>
+<div id="admin-mobile-menu" class="hidden absolute right-4 top-full mt-2 w-64 rounded-lg bg-surface-container-lowest p-3 shadow-lg ring-1 ring-primary/10">
+<div class="flex flex-col gap-1 font-label-md">
+<a class="rounded-lg px-3 py-2 text-primary font-bold bg-secondary-container" href="#dashboard">Dashboard</a>
+<a class="rounded-lg px-3 py-2 text-on-surface-variant hover:bg-surface-container" href="#content-management">Content Management</a>
+<a class="rounded-lg px-3 py-2 text-on-surface-variant hover:bg-surface-container" href="#user-management">User Management</a>
+<a class="rounded-lg px-3 py-2 text-on-surface-variant hover:bg-surface-container" href="#reports">Reports</a>
+</div>
+</div>
 </header>
-<div class="p-margin-mobile md:p-margin-desktop md:pt-lg max-w-[1200px] mx-auto">
+<div id="dashboard" class="p-margin-mobile md:p-margin-desktop md:pt-lg max-w-[1200px] mx-auto">
 <!-- Page Title -->
 <div class="mb-lg">
 <h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-xs">Dashboard Overview</h2>
@@ -325,9 +359,9 @@
 <div class="lg:col-span-2 bg-surface-container-lowest rounded-xl border border-primary/10 shadow-[0px_10px_30px_rgba(27,67,50,0.04)] overflow-hidden">
 <div class="p-md border-b border-outline-variant/30 flex justify-between items-center bg-surface-bright">
 <h3 class="font-title-lg text-title-lg text-primary m-0">Recent Donor Activity</h3>
-<button class="font-label-md text-label-md text-secondary hover:text-secondary-fixed-dim transition-colors flex items-center gap-1">
+<a href="#reports" class="font-label-md text-label-md text-secondary hover:text-secondary-fixed-dim transition-colors flex items-center gap-1">
                             View All <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
-</button>
+</a>
 </div>
 <div class="overflow-x-auto">
 <table class="w-full text-left border-collapse">
@@ -449,13 +483,120 @@
 </div>
 </div>
 <div class="p-md pt-0 mt-auto">
-<button class="w-full py-2.5 px-4 rounded-lg bg-surface-container-low border border-outline-variant text-on-surface font-label-md hover:bg-surface-variant transition-colors flex items-center justify-center gap-2">
+<button id="new-update-button" class="w-full py-2.5 px-4 rounded-lg bg-surface-container-low border border-outline-variant text-on-surface font-label-md hover:bg-surface-variant transition-colors flex items-center justify-center gap-2" type="button">
 <span class="material-symbols-outlined text-[18px]">add</span>
                             New Update
                         </button>
 </div>
 </div>
 </div>
+<!-- Content Management -->
+<section id="content-management" class="bg-surface-container-lowest rounded-xl border border-primary/10 shadow-[0px_10px_30px_rgba(27,67,50,0.04)] p-md md:p-lg mb-xl scroll-mt-6">
+<div class="flex flex-wrap items-start justify-between gap-md mb-md">
+<div>
+<h2 class="font-headline-md text-headline-md text-primary m-0">Content Management</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Publish a short program update for the public website.</p>
+</div>
+<span id="content-status" class="text-sm text-on-surface-variant" role="status"></span>
+</div>
+<form id="content-form" class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<label class="flex flex-col gap-xs font-label-md text-label-md text-on-surface">Update title<input class="rounded-lg border border-outline-variant bg-surface-bright px-sm py-sm font-body-md" name="title" required placeholder="e.g. New planting milestone"/></label>
+<label class="flex flex-col gap-xs font-label-md text-label-md text-on-surface">Category<select class="rounded-lg border border-outline-variant bg-surface-bright px-sm py-sm font-body-md" name="category"><option>Reforestation</option><option>Community</option><option>Education</option></select></label>
+<label class="md:col-span-2 flex flex-col gap-xs font-label-md text-label-md text-on-surface">Summary<textarea class="rounded-lg border border-outline-variant bg-surface-bright px-sm py-sm font-body-md" name="summary" rows="3" required placeholder="Write the update summary"></textarea></label>
+<button class="md:col-span-2 w-full md:w-auto md:justify-self-start rounded-lg bg-primary px-md py-sm text-on-primary font-label-md hover:bg-primary-container" type="submit"><span class="material-symbols-outlined align-middle text-[18px]">publish</span> Publish update</button>
+</form>
+</section>
+<!-- User Management -->
+<section id="user-management" class="bg-surface-container-lowest rounded-xl border border-primary/10 shadow-[0px_10px_30px_rgba(27,67,50,0.04)] p-md md:p-lg mb-xl scroll-mt-6">
+<div class="flex flex-wrap items-start justify-between gap-md mb-md"><div><h2 class="font-headline-md text-headline-md text-primary m-0">User Management</h2><p class="font-body-md text-body-md text-on-surface-variant">Manage staff access to the admin workspace.</p></div><span id="user-status" class="text-sm text-on-surface-variant" role="status"></span></div>
+<form id="user-form" class="grid grid-cols-1 md:grid-cols-3 gap-md mb-lg">
+<label class="flex flex-col gap-xs font-label-md text-label-md text-on-surface">Name<input class="rounded-lg border border-outline-variant bg-surface-bright px-sm py-sm font-body-md" name="name" required placeholder="Staff name"/></label>
+<label class="flex flex-col gap-xs font-label-md text-label-md text-on-surface">Email<input class="rounded-lg border border-outline-variant bg-surface-bright px-sm py-sm font-body-md" name="email" required type="email" placeholder="staff@example.org"/></label>
+<label class="flex flex-col gap-xs font-label-md text-label-md text-on-surface">Role<select class="rounded-lg border border-outline-variant bg-surface-bright px-sm py-sm font-body-md" name="role"><option>Editor</option><option>Reporter</option><option>Administrator</option></select></label>
+<button class="md:col-span-3 w-full md:w-auto md:justify-self-start rounded-lg bg-secondary px-md py-sm text-on-secondary font-label-md hover:opacity-90" type="submit"><span class="material-symbols-outlined align-middle text-[18px]">person_add</span> Add user</button>
+</form>
+<div class="overflow-x-auto"><table class="w-full text-left border-collapse"><thead class="bg-surface-container-low font-label-md text-label-md text-on-surface-variant"><tr><th class="p-sm">Name</th><th class="p-sm">Email</th><th class="p-sm">Role</th><th class="p-sm">Status</th></tr></thead><tbody id="user-list" class="font-body-md text-body-md"><tr class="border-b border-outline-variant/30"><td class="p-sm">Grace Achieng</td><td class="p-sm">grace@creationstewards.org</td><td class="p-sm">Administrator</td><td class="p-sm"><span class="text-secondary font-medium">Active</span></td></tr><tr class="border-b border-outline-variant/30"><td class="p-sm">Daniel Okello</td><td class="p-sm">daniel@creationstewards.org</td><td class="p-sm">Editor</td><td class="p-sm"><span class="text-secondary font-medium">Active</span></td></tr></tbody></table></div>
+</section>
+<!-- Reports -->
+<section id="reports" class="bg-surface-container-lowest rounded-xl border border-primary/10 shadow-[0px_10px_30px_rgba(27,67,50,0.04)] p-md md:p-lg mb-xl scroll-mt-6">
+<div class="flex flex-wrap items-start justify-between gap-md"><div><h2 class="font-headline-md text-headline-md text-primary m-0">Reports</h2><p class="font-body-md text-body-md text-on-surface-variant">Review the current reporting period and export donor activity.</p></div><button id="download-report" class="rounded-lg bg-primary px-md py-sm text-on-primary font-label-md hover:bg-primary-container" type="button"><span class="material-symbols-outlined align-middle text-[18px]">download</span> Download CSV</button></div>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-md mt-lg"><div class="rounded-lg bg-surface-container-low p-md"><p class="font-label-md text-label-md text-on-surface-variant">Reporting period</p><p class="font-title-lg text-title-lg text-primary">October 2024</p></div><div class="rounded-lg bg-surface-container-low p-md"><p class="font-label-md text-label-md text-on-surface-variant">Recorded donations</p><p class="font-title-lg text-title-lg text-primary">$2,100.00</p></div><div class="rounded-lg bg-surface-container-low p-md"><p class="font-label-md text-label-md text-on-surface-variant">Completed gifts</p><p class="font-title-lg text-title-lg text-primary">3 of 4</p></div></div>
+<p id="report-status" class="mt-md text-sm text-on-surface-variant" role="status"></p>
+</section>
 </div>
 </main>
+<script>
+document.querySelectorAll('nav a[href^="#"], #admin-mobile-menu a').forEach(function (link) {
+        link.addEventListener('click', function () {
+                document.querySelectorAll('nav a[href^="#"]').forEach(function (item) { item.removeAttribute('aria-current'); });
+                link.setAttribute('aria-current', 'page');
+                var menu = document.getElementById('admin-mobile-menu');
+                if (menu) menu.classList.add('hidden');
+        });
+});
+
+document.querySelector('[data-admin-menu-button]').addEventListener('click', function (event) {
+        var button = event.currentTarget;
+        var menu = document.getElementById(button.getAttribute('aria-controls'));
+        var isOpen = !menu.classList.toggle('hidden');
+        button.setAttribute('aria-expanded', String(isOpen));
+});
+
+document.getElementById('content-form').addEventListener('submit', function (event) {
+        event.preventDefault();
+        var form = event.currentTarget;
+        if (!form.checkValidity()) { form.reportValidity(); return; }
+        document.getElementById('content-status').textContent = 'Update published for review.';
+        form.reset();
+});
+
+document.getElementById('user-form').addEventListener('submit', function (event) {
+        event.preventDefault();
+        var form = event.currentTarget;
+        if (!form.checkValidity()) { form.reportValidity(); return; }
+        var data = new FormData(form);
+        var row = document.createElement('tr');
+        row.className = 'border-b border-outline-variant/30';
+        row.innerHTML = '<td class="p-sm">' + data.get('name') + '</td><td class="p-sm">' + data.get('email') + '</td><td class="p-sm">' + data.get('role') + '</td><td class="p-sm"><span class="text-secondary font-medium">Active</span></td>';
+        document.getElementById('user-list').appendChild(row);
+        document.getElementById('user-status').textContent = 'User added.';
+        form.reset();
+});
+
+document.getElementById('download-report').addEventListener('click', function () {
+        var csv = 'Donor,Campaign,Amount,Status\nJohn Doe,Reforestation 2024,500.00,Completed\nSarah Jenkins,Community Wells,1200.00,Completed\nMbarara Group,Youth Seminar Series,350.00,Processing\nAlice Kintu,General Fund,50.00,Completed';
+        var link = document.createElement('a');
+        link.href = URL.createObjectURL(new Blob([csv], { type: 'text/csv' }));
+        link.download = 'creation-stewards-donor-report.csv';
+        link.click();
+        URL.revokeObjectURL(link.href);
+        document.getElementById('report-status').textContent = 'Report downloaded.';
+});
+
+document.getElementById('new-update-button').addEventListener('click', function () { document.getElementById('content-management').scrollIntoView({ behavior: 'smooth' }); document.querySelector('#content-form [name="title"]').focus(); });
+document.getElementById('logout-button').addEventListener('click', function () {
+        sessionStorage.removeItem('creationStewardsAdminAuthenticated');
+        window.location.reload();
+});
+
+var loginForm = document.getElementById('login-form');
+var loginError = document.getElementById('login-error');
+function showAdminWorkspace() {
+        document.body.classList.add('authenticated');
+        document.getElementById('login-screen').classList.add('hidden');
+}
+if (sessionStorage.getItem('creationStewardsAdminAuthenticated') === 'true') showAdminWorkspace();
+loginForm.addEventListener('submit', function (event) {
+        event.preventDefault();
+        if (!loginForm.checkValidity()) {
+                loginError.textContent = 'Enter a valid email and a password with at least 8 characters.';
+                loginError.classList.remove('hidden');
+                loginForm.reportValidity();
+                return;
+        }
+        sessionStorage.setItem('creationStewardsAdminAuthenticated', 'true');
+        loginError.classList.add('hidden');
+        showAdminWorkspace();
+});
+</script>
 </body></html>
