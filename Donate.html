@@ -273,6 +273,22 @@ document.querySelectorAll('[data-menu-button]').forEach(function (button) {
         button.setAttribute('aria-expanded', String(isOpen));
     });
 });
+document.addEventListener('click', function (event) {
+    var menu = document.getElementById('mobile-menu');
+    var button = document.querySelector('[data-menu-button]');
+    if (!menu || menu.classList.contains('hidden') || button.contains(event.target) || menu.contains(event.target)) return;
+    menu.classList.add('hidden');
+    button.setAttribute('aria-expanded', 'false');
+});
+document.addEventListener('keydown', function (event) {
+    if (event.key !== 'Escape') return;
+    var menu = document.getElementById('mobile-menu');
+    var button = document.querySelector('[data-menu-button]');
+    if (!menu || menu.classList.contains('hidden')) return;
+    menu.classList.add('hidden');
+    button.setAttribute('aria-expanded', 'false');
+    button.focus();
+});
 
 var paymentButtons = document.querySelectorAll('[data-payment-method]');
 var paymentPanels = document.querySelectorAll('[data-payment-panel]');
