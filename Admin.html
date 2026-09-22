@@ -184,11 +184,13 @@
                 #protected-main {
                         display: none !important;
                 }
-                body.authenticated #protected-shell {
-                        display: flex !important;
-                }
                 body.authenticated #protected-main {
                         display: block !important;
+                }
+                @media (min-width: 768px) {
+                        body.authenticated #protected-shell {
+                                display: flex !important;
+                        }
                 }
         /* Custom scrollbar for webkit */
         ::-webkit-scrollbar {
@@ -272,7 +274,7 @@
 <!-- Main Content Area -->
 <main id="protected-main" class="flex-1 md:ml-64 h-full overflow-y-auto bg-background">
 <!-- Mobile Header (Visible only on small screens) -->
-<header class="md:hidden flex items-center justify-between p-margin-mobile bg-surface-container-low border-b border-outline-variant sticky top-0 z-30">
+<header class="relative md:hidden flex items-center justify-between p-margin-mobile bg-surface-container-low border-b border-outline-variant sticky top-0 z-30">
 <div class="flex items-center gap-sm">
 <img alt="Admin User" class="w-8 h-8 rounded-full object-cover border border-secondary" data-alt="A small, professional portrait photograph of an African administrator in a bright, modern office setting. The image should be warm, approachable, and well-lit with natural sunlight, fitting a professional stewardship aesthetic with subtle green and gold tones in the background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZGydF4XY-AgCzB7uYdLJvA2XjreCCIUUyFUqT1eI46IZVjL4XiNRXhXX62DaUzJlDFnVNonOx1IPNu6czEjGLdko2O2csVNCby0hDy01SzBCs2t-yDwOSNhKbqiYF-vdD34WopfHieVxJpyLEnKgaE3iQyN3VzAmTfaxGOgtCZ3XHW5J2COu3kgwKuW6Iyf6l2jX4IYwVCBnAZPCR11D0YQB9rfwfdN6EeiUuqn-sn44_QBWr8NGopg"/>
 <h1 class="font-headline-sm text-headline-sm text-primary m-0">Dashboard</h1>
