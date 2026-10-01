@@ -157,8 +157,8 @@
 <main class="flex-grow w-full max-w-[1200px] mx-auto px-margin-mobile md:px-margin-desktop py-lg">
 <!-- Header Section -->
 <header class="text-center mb-xl">
-<h1 class="font-display-lg text-display-lg md:text-[56px] text-primary mb-sm">Our Program</h1>
-<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">Cultivating a sustainable future through faith-based ecological action in Uganda.</p>
+<h1 data-site-content="program.hero.title" class="font-display-lg text-display-lg md:text-[56px] text-primary mb-sm">Our Program</h1>
+<p data-site-content="program.hero.summary" class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">Cultivating a sustainable future through faith-based ecological action in Uganda.</p>
 </header>
 <!-- Pillars (Bento Grid) -->
 <section class="mb-xl">
@@ -255,6 +255,14 @@
 </div>
 </section>
 </main>
+<section class="bg-surface-container-low px-margin-mobile py-xl md:px-margin-desktop">
+<div class="mx-auto max-w-[1200px]">
+<h2 class="font-headline-md text-headline-md text-primary mb-lg">Program Updates</h2>
+<div id="public-updates" class="grid grid-cols-1 gap-md md:grid-cols-2 lg:grid-cols-3" aria-live="polite">
+<p class="text-on-surface-variant">Loading updates...</p>
+</div>
+</div>
+</section>
 <!-- Footer -->
 <footer class="w-full py-lg px-margin-desktop grid grid-cols-1 md:grid-cols-3 gap-gutter bg-primary dark:bg-on-primary-fixed full-width bottom">
 <div class="flex flex-col space-y-sm">
@@ -303,4 +311,6 @@ document.addEventListener('keydown', function (event) {
     button.focus();
 });
 </script>
+<script src="/site-content.js" defer></script>
+<script src="/public-updates.js" defer></script>
 </body></html>

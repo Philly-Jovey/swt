@@ -151,8 +151,8 @@
 <div class="absolute inset-0 w-full h-full bg-cover bg-center" data-alt="A breathtaking, wide panoramic view of the lush, rolling hills and vibrant green landscapes of Uganda at sunrise. The soft, golden morning light filters through misty valleys, illuminating rich fertile soil and dense, verdant foliage. The overall color palette is dominated by deep forest greens, sky blues, and warm golden yellow sunlight. The mood is majestic, hopeful, and serene, capturing the raw beauty of natural creation in a high-end documentary photography style." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBR6jmxiL5R54zPAgGPYOcBR8EwJntML4820xPw-anRlzEWig4QIrOwLgn0-AgKlM1bCh9jV1K6izE4PpRjtCeZ5MYPM-bEjFNyjH_2C6YThWyhZTAIC0IZffajkD2no8g27CfrYr1zRTiAI-HPlBK38e2dW75o-nWQy00gq7RD9EXkNzZYpU4XwjpejXSwjlp9V44FG-V45jgVXPxudlYuxOlrwkxIc1WdlAso02OQ37w-syHhAfymoQ')"></div>
 <div class="absolute inset-0 bg-primary/40 mix-blend-multiply"></div>
 <div class="relative z-10 text-center px-4 max-w-4xl mx-auto flex flex-col items-center">
-<h1 class="font-display-lg text-display-lg text-surface-container-lowest mb-6 drop-shadow-md">Healing God's Creation</h1>
-<p class="font-body-lg text-body-lg text-surface-container-lowest/90 mb-8 max-w-2xl text-lg drop-shadow">Empowering communities in Uganda to embrace the biblical mandate of stewardship through sustainable action, education, and deep connection with the natural world.</p>
+<h1 data-site-content="home.hero.title" class="font-display-lg text-display-lg text-surface-container-lowest mb-6 drop-shadow-md">Healing God's Creation</h1>
+<p data-site-content="home.hero.summary" class="font-body-lg text-body-lg text-surface-container-lowest/90 mb-8 max-w-2xl text-lg drop-shadow">Empowering communities in Uganda to embrace the biblical mandate of stewardship through sustainable action, education, and deep connection with the natural world.</p>
 <div class="flex space-x-4">
 <button class="bg-tertiary-fixed-dim text-primary font-label-md text-label-md px-8 py-3 rounded-full hover:bg-tertiary-fixed transition-all font-bold shadow-lg">Join the Movement</button>
 <button class="bg-surface-container-lowest/20 border border-surface-container-lowest text-surface-container-lowest font-label-md text-label-md px-8 py-3 rounded-full hover:bg-surface-container-lowest/30 transition-all font-bold backdrop-blur-sm">Learn More</button>
@@ -248,6 +248,17 @@
 </div>
 </div>
 </section>
+<section class="bg-surface-container-low px-margin-mobile py-xl md:px-margin-desktop">
+<div class="mx-auto max-w-[1200px]">
+<div class="mb-lg">
+<span class="font-label-md text-label-md uppercase text-secondary">From the field</span>
+<h2 class="font-headline-md text-headline-md text-primary">Latest Updates</h2>
+</div>
+<div id="public-updates" class="grid grid-cols-1 gap-md md:grid-cols-2 lg:grid-cols-3" aria-live="polite">
+<p class="text-on-surface-variant">Loading updates...</p>
+</div>
+</div>
+</section>
 <!-- Footer -->
 <footer class="w-full py-lg px-margin-desktop grid grid-cols-1 md:grid-cols-3 gap-gutter bg-primary dark:bg-on-primary-fixed">
 <div class="col-span-1">
@@ -289,4 +300,6 @@ document.addEventListener('keydown', function (event) {
     button.focus();
 });
 </script>
+<script src="/site-content.js" defer></script>
+<script src="/public-updates.js" defer></script>
 </body></html>

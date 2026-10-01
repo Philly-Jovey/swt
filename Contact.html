@@ -158,8 +158,8 @@
 <main class="max-w-[1200px] mx-auto px-margin-mobile md:px-margin-desktop py-lg space-y-xl">
 <!-- Header Section -->
 <header class="text-center max-w-2xl mx-auto space-y-md">
-<h1 class="font-display-lg text-display-lg text-primary">Get in Touch</h1>
-<p class="font-body-lg text-body-lg text-on-surface-variant">We are dedicated to sustainable stewardship. Reach out to us for inquiries, partnerships, or to learn more about our programs in Uganda.</p>
+<h1 data-site-content="contact.hero.title" class="font-display-lg text-display-lg text-primary">Get in Touch</h1>
+<p data-site-content="contact.hero.summary" class="font-body-lg text-body-lg text-on-surface-variant">We are dedicated to sustainable stewardship. Reach out to us for inquiries, partnerships, or to learn more about our programs in Uganda.</p>
 </header>
 <!-- Grid Layout for Form and Info -->
 <div class="grid grid-cols-1 lg:grid-cols-12 gap-lg">
@@ -313,4 +313,5 @@ document.querySelector('[data-contact-form]').addEventListener('submit', functio
     window.open('https://wa.me/256776087967?text=' + encodeURIComponent(message), '_blank');
 });
 </script>
+<script src="/site-content.js" defer></script>
 </body></html>
