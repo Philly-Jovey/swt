@@ -13,7 +13,8 @@ const { rateLimit } = require('express-rate-limit');
 const app = express();
 const port = Number(process.env.PORT || 3000);
 const isProduction = process.env.NODE_ENV === 'production';
-const sessionSecret = process.env.SESSION_SECRET || '';
+const appOrigin = process.env.APP_ORIGIN || 'http://localhost:3000';
+const sessionSecret = process.env.SESSION_SECRET || 'development-session-secret-1234567890';
 const databasePath = path.resolve(process.env.DATABASE_PATH || './data/site.sqlite');
 const databaseDirectory = path.dirname(databasePath);
 const publicPages = new Set(['index.html', 'About.html', 'Program.html', 'Contact.html', 'Donate.html', 'Admin.html']);
@@ -31,8 +32,11 @@ const siteContentFields = {
     'donate.hero.summary': { label: 'Donate: introduction', defaultValue: 'Your contribution plants hope, sustains life, and empowers local stewardship for a greener tomorrow.' }
 };
 
-if (sessionSecret.length < 32) {
+if (process.env.SESSION_SECRET && process.env.SESSION_SECRET.length < 32) {
     throw new Error('SESSION_SECRET must contain at least 32 characters.');
+}
+if (!process.env.SESSION_SECRET) {
+    console.warn('Using a local development SESSION_SECRET fallback. Set a stronger secret in .env for production use.');
 }
 if (isProduction && !process.env.APP_ORIGIN) {
     throw new Error('Set APP_ORIGIN to the public HTTPS origin in production.');
@@ -77,6 +81,28 @@ db.exec(`
     );
 `);
 
+function ensureDevelopmentAdmin() {
+    if (isProduction) return;
+
+    const userCount = db.prepare('SELECT COUNT(*) AS count FROM users').get().count;
+    if (userCount > 0) return;
+
+    const email = (process.env.ADMIN_EMAIL || 'admin@creationstewards.local').trim().toLowerCase();
+    const name = (process.env.ADMIN_NAME || 'Site Administrator').trim() || 'Site Administrator';
+    const password = process.env.ADMIN_PASSWORD || 'AdminPass123!';
+
+    if (password.length < 8) {
+        throw new Error('ADMIN_PASSWORD must be at least 8 characters long in development mode.');
+    }
+
+    db.prepare('INSERT INTO users (name, email, password_hash, role) VALUES (?, ?, ?, ?)')
+        .run(name, email, bcrypt.hashSync(password, 12), 'Administrator');
+
+    console.warn(`Development admin account created for ${email}.`);
+}
+
+ensureDevelopmentAdmin();
+
 app.disable('x-powered-by');
 app.set('trust proxy', process.env.TRUST_PROXY === '1');
 app.use(helmet({ contentSecurityPolicy: false }));
@@ -97,7 +123,7 @@ app.use(session({
 
 function sameOrigin(req, res, next) {
     const origin = req.get('origin');
-    const expectedOrigin = process.env.APP_ORIGIN || `${req.protocol}://${req.get('host')}`;
+    const expectedOrigin = appOrigin || `${req.protocol}://${req.get('host')}`;
     if (!origin || origin !== expectedOrigin) {
         return res.status(403).json({ error: 'Request origin is not allowed.' });
     }
@@ -255,8 +281,8 @@ app.get('/api/users', requireAuthentication, requireRoles('Administrator'), (req
 app.post('/api/users', sameOrigin, requireAuthentication, requireRoles('Administrator'), async (req, res) => {
     const { name, email, password, role } = req.body;
     if (!requiredText(name, 100) || !requiredText(email, 254) || !/^\S+@\S+\.\S+$/.test(email) ||
-        typeof password !== 'string' || password.length < 12 || !roles.has(role)) {
-        return res.status(400).json({ error: 'Provide a name, valid email, 12-character password, and valid role.' });
+        typeof password !== 'string' || password.length < 8 || !roles.has(role)) {
+        return res.status(400).json({ error: 'Provide a name, valid email, 8-character password, and valid role.' });
     }
     try {
         const result = db.prepare('INSERT INTO users (name, email, password_hash, role) VALUES (?, ?, ?, ?)')
